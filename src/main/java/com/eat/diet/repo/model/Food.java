@@ -6,13 +6,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @Data
+@Entity
+@Document(collation = "food")
 public class Food {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
     private String name;
     private int calories;
     private int serving;
@@ -47,9 +48,5 @@ public class Food {
     public String getType(){
         return type;
     }
-
-
-
-
 }
 

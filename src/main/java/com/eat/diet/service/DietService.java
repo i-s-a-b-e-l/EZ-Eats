@@ -5,6 +5,8 @@ import com.eat.diet.repo.model.Food;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class DietService {
 
@@ -13,13 +15,12 @@ public class DietService {
 
 
 
-    public Food createFood(String name){
-        Food food = new Food();
-        food.setName(name);
+    public Food addFood(Food food){
         return foodRepository.save(food);
 
     }
 
+    //TODO @Mahima: instead of taking all these parameters just take a Person as a parameter
     public int calc(String goal, int weight, String gender, String activityLevel, int bodyFat){
         if(goal.equals("Maintain Weight")){
             double kg = weight/2.2;
@@ -71,7 +72,16 @@ public class DietService {
         if(goal.equals("Gain Weight")){
 
         }
+
+        return 0;//placeholder
     }
 
+
+
+
+    public Map<String, Food> foodSuggestion(int cal){
+        //TODO @Mahima: learn maps -> take cal as input, return a map -> food list, {breakfast, {food list}}
+        return null;
+    }
 
 }

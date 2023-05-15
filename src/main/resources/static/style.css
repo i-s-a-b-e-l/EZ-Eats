@@ -8,43 +8,44 @@
     text-align: center;
 }
 
-button
-{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 1.0);
-    border-width: medium;
-}
 
-.fiveB
-{
-    width: 10%;
-    aspect-ratio: 2/1;
-}
+/*button*/
+/*{*/
+/*    text-align: center;*/
+/*    background-color: rgba(255, 255, 255, 1.0);*/
+/*    border-width: medium;*/
+/*}*/
 
-.twoB
-{
-    width: 25%;
-    aspect-ratio: 5/1;
-}
+/*.fiveB*/
+/*{*/
+/*    width: 10%;*/
+/*    aspect-ratio: 2/1;*/
+/*}*/
 
-.twoF
-{
-    width: 25%;
-}
-.Diet
-{
-    display: flex;
-    justify-content: center;
-}
+/*.twoB*/
+/*{*/
+/*    width: 25%;*/
+/*    aspect-ratio: 5/1;*/
+/*}*/
 
-.Gender
-{
-    display: flex;
-    justify-content: center;
-}
+/*.twoF*/
+/*{*/
+/*    width: 25%;*/
+/*}*/
+/*.Diet*/
+/*{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 
-.Height
-{
-    display: flex;
-    justify-content: center;
-}
+/*.Gender*/
+/*{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.Height*/
+/*{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/

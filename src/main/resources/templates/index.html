@@ -11,16 +11,42 @@
 <body>
     <h1 id = "Title">EZ Eats</h1>
     <h2 id = "Subtitle">A personalized diet builder</h2>
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-primary">Anything</button>
-        <button type="button" class="btn btn-outline-primary">Vegetarian</button>
-        <button type="button" class="btn btn-outline-primary">Vegan</button>
-        <button type="button" class="btn btn-outline-primary">Paleo</button>
-        <button type="button" class="btn btn-outline-primary">Keto</button>
+    <div class="btn-group1" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Anything</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Vegetarian</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Vegan</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Paleo</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Keto</button>
     </div>
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-primary">Male</button>
-        <button type="button" class="btn btn-outline-primary">Female</button>
+    <div class="btn-group2" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Lose</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Maintain</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Gain</button>
+    </div>
+    <div class="btn-group3" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Male</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Female</button>
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Weight" aria-label="Weight" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">lbs</span>
+    </div>
+    <div class="btn-group4" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Low</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Medium</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">High</button>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Activity Level
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Sedentary</a></li>
+            <li><a class="dropdown-item" href="#">Lightly Active</a></li>
+            <li><a class="dropdown-item" href="#">Moderately Active</a></li>
+            <li><a class="dropdown-item" href="#">Very Active</a></li>
+            <li><a class="dropdown-item" href="#">Extremely Active</a></li>
+        </ul>
     </div>
 <!--    <div class = "Diet">-->
 <!--        <button type="button" class = "fiveB">Anything</button>-->

@@ -1,7 +1,6 @@
 package com.eat.diet.controller;
 
-import com.eat.diet.repo.model.Food;
-import com.eat.diet.repo.model.Person;
+import com.eat.diet.repo.model.*;
 import com.eat.diet.service.DietService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,7 +31,7 @@ public class DietController {
 
     @PostMapping("/api/diet")
     public String diet(@RequestBody Person person) {
-        int cal = dietService.calc("",100, "", "", 10);
+        int cal = dietService.calc(person);
         dietService.foodSuggestion(cal);
 
         //TODO @Zoey: render the above in the html page

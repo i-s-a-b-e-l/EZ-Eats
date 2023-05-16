@@ -8,16 +8,12 @@ public class Person {
     private String name;
     private int weight;
     private Gender gender;
-    private String activityLevel;
-
+    private ActivityLevel activityLevel;
     private int bodyFat;
-    private String pref; //Vegetarian, Vegan, or Non-vegetarian
-    private String goal;
+    private Pref pref; //Vegetarian, Vegan, or Non-vegetarian
+    private Goal goal;
 
-
-
-
-    public Person(String name, int weight, Gender gender, String activityLevel, int bodyFat, String pref, String goal){
+    public Person(String name, int weight, Gender gender, ActivityLevel activityLevel, int bodyFat, Pref pref, Goal goal){
         this.name = name;
         this.weight = weight;
         this.gender = gender;
@@ -26,10 +22,4 @@ public class Person {
         this.pref = pref;
         this.goal = goal;
     }
-
-
-
-
-
-
 }

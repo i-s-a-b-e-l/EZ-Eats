@@ -20,7 +20,7 @@ public class Food {
     private String type; //Breakfast, Lunch, or Dinner
 
     public Food(){
-        name = " ";
+        name = "";
         calories = 0;
         serving = 0;
     }

@@ -1,0 +1,83 @@
+[
+    {
+    "name": "Pumpkin Breakfast Cookie",
+    "calories": 256,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false
+    },
+    {
+    "name": "Simple Sweet Shake",
+    "calories": 707,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false
+    },
+    {
+    "name": "Strawberry Cottage Cheese Smoothie",
+    "calories": 256,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false
+    },
+    {
+    "name": "Vegan Breakfast Potatoes",
+    "calories": 183,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true
+    },
+    {
+    "name": "Morning Salmon Salad",
+    "calories": 179,
+    "type": "breakfast",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": true,
+    "keto": true
+    },
+    {
+    "name": "Blueberry, Spinach, and Yolk Protein Smooth",
+    "calories": 112,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": true,
+    "keto": true
+    },
+    {
+    "name": "Cantaloupe",
+    "calories": 47,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true
+    },
+    {
+    "name": "Blueberry Yogurt",
+    "calories": 148,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false
+    },
+    {
+    "name": "Apple Crumble",
+    "calories": 96,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false
+    },
+]

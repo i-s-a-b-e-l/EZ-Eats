@@ -89,4 +89,194 @@
     "keto": false,
     "recipe": "https://www.eatthismuch.com/recipe/nutrition/apple-crumble,907198/"
     },
+    {
+    "name": "Keto Mug English English Muffin",
+    "calories": 86,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Grilled Peaches with Honey",
+    "calories": 60,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Soy Milk Pancakes",
+    "calories": 203,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Scrambled Eggs and Broccoli",
+    "calories": 93,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Creamy Chocolate Protein Smoothie",
+    "calories": 208,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Sticky Bun Chia Seed Pudding",
+    "calories": 322,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Egg Burrito",
+    "calories": 474,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": true,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Blueberry Blast Smoothie",
+    "calories": 417,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Cinnamon Toast",
+    "calories": 261,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Peanut Butter Banana Toast",
+    "calories": 385,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Strawberry Spinach Green Smoothie",
+    "calories": 149,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Scrambled Tofu on Toast",
+    "calories": 426,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Mango Pineapple Green Smoothie",
+    "calories": 218,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Banana Almond Butter",
+    "calories": 203,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Cranberry and Flax Smoothie",
+    "calories": 351,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Chocolate Avocado Smoothie",
+    "calories": 368,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Peach Yogurt Parfait",
+    "calories": 443,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Cinnamon Apple and Honey Toast",
+    "calories": 207,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
+    {
+    "name": "Chia Seed Papaya Shake",
+    "calories": 222,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "aasdf"
+    },
 ]

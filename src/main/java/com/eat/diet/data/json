@@ -279,4 +279,24 @@
     "keto": false,
     "recipe": "https://www.eatthismuch.com/recipe/nutrition/chia-seed-papaya-shake,412978/"
     },
+    {
+    "name": "High Protein Omelet",
+    "calories": 302,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/high-protein-omelet,940672/"
+    },
+    {
+    "name": "Tropical Smoothie",
+    "calories": 192,
+    "type": "breakfast",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/"
+     },
 ]

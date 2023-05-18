@@ -90,14 +90,14 @@
     "recipe": "https://www.eatthismuch.com/recipe/nutrition/apple-crumble,907198/"
     },
     {
-    "name": "Keto Mug English English Muffin",
+    "name": "Keto Mug English Muffin",
     "calories": 86,
     "type": "breakfast",
     "vegetarian": true,
     "vegan": false,
     "paleo": false,
     "keto": true,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/keto-mug-english-muffins,906067/"
     },
     {
     "name": "Grilled Peaches with Honey",
@@ -107,7 +107,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/grilled-peaches-with-honey,927911/"
     },
     {
     "name": "Soy Milk Pancakes",
@@ -117,7 +117,7 @@
     "vegan": false,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/soy-milk-pancakes,3176689/"
     },
     {
     "name": "Scrambled Eggs and Broccoli",
@@ -127,7 +127,7 @@
     "vegan": false,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/scrambled-eggs-and-broccoli,3086513/"
     },
     {
     "name": "Creamy Chocolate Protein Smoothie",
@@ -137,7 +137,7 @@
     "vegan": false,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/creamy-chocolate-protein-smoothie,1011215/"
     },
     {
     "name": "Sticky Bun Chia Seed Pudding",
@@ -147,7 +147,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/sticky-bun-chia-seed-pudding,338083/"
     },
     {
     "name": "Egg Burrito",
@@ -157,7 +157,7 @@
     "vegan": false,
     "paleo": true,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/egg-burrito,938732/"
     },
     {
     "name": "Blueberry Blast Smoothie",
@@ -167,7 +167,7 @@
     "vegan": true,
     "paleo": true,
     "keto": true,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/blueberry-blast-smoothie,921822/"
     },
     {
     "name": "Cinnamon Toast",
@@ -177,7 +177,7 @@
     "vegan": false,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/cinnamon-toast,36559/"
     },
     {
     "name": "Peanut Butter Banana Toast",
@@ -187,7 +187,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/peanut-butter-banana-toast,39533/"
     },
     {
     "name": "Strawberry Spinach Green Smoothie",
@@ -197,7 +197,7 @@
     "vegan": true,
     "paleo": true,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/strawberry-spinach-green-smoothie,933709/"
     },
     {
     "name": "Scrambled Tofu on Toast",
@@ -207,7 +207,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/scrambled-tofu-on-toast,1481928/"
     },
     {
     "name": "Mango Pineapple Green Smoothie",
@@ -217,7 +217,7 @@
     "vegan": true,
     "paleo": true,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/mango-pineapple-green-smoothie,1028352/"
     },
     {
     "name": "Banana Almond Butter",
@@ -227,7 +227,7 @@
     "vegan": true,
     "paleo": true,
     "keto": true,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/banana-almond-butter,717739/"
     },
     {
     "name": "Cranberry and Flax Smoothie",
@@ -237,7 +237,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/cranberry-and-flax-smoothie,905529/"
     },
     {
     "name": "Chocolate Avocado Smoothie",
@@ -247,7 +247,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/chocolate-avocado-smoothie,906544/"
     },
     {
     "name": "Peach Yogurt Parfait",
@@ -257,7 +257,7 @@
     "vegan": false,
     "paleo": false,
     "keto": true,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/peach-yogurt-parfait,905755/"
     },
     {
     "name": "Cinnamon Apple and Honey Toast",
@@ -267,7 +267,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/cinnamon-apple-and-honey-toast,905981/"
     },
     {
     "name": "Chia Seed Papaya Shake",
@@ -277,6 +277,6 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "aasdf"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/chia-seed-papaya-shake,412978/"
     },
 ]

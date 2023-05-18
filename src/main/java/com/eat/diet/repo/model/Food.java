@@ -22,6 +22,7 @@ public class Food {
     private boolean paleo;
     private boolean keto;
     private String recipe; // url to some recipe
+    private String img;
 
     public Food(){
         name = "";

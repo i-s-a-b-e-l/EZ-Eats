@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.diet-type, .gender, .weight-goal
+.gender, .weight-goal
 {
     display: flex;
     justify-content: center;

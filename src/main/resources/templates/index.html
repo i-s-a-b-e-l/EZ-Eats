@@ -13,18 +13,32 @@
     <h1 id="Title">EZ Eats</h1>
     <h2 id="Subtitle">A personalized diet builder</h2>
 
-    <div class="diet-type">
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Anything</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Vegetarian</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Vegan</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Paleo</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Keto</button>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="Anything" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="Anything">Anything</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="Vegetarian" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Vegetarian"">Vegetarian</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="Vegan" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Vegan">Vegan</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="Paleo" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Paleo">Paleo</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="Keto" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Keto">Keto</label>
     </div>
 
-    <div class="weight-goal">
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Lose</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Maintain</button>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="button" aria-pressed="true">Gain</button>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio1">Lose</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">Maintain</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio3">Gain</label>
     </div>
 
     <div class="gender">

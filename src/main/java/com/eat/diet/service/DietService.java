@@ -1,7 +1,8 @@
 package com.eat.diet.service;
 
 import com.eat.diet.repo.FoodRepository;
-import com.eat.diet.repo.model.*;
+import com.eat.diet.repo.model.Food;
+import com.eat.diet.repo.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,72 +10,112 @@ import java.util.Map;
 
 @Service
 public class DietService {
+
     @Autowired
     private FoodRepository foodRepository;
 
+
+
     public Food addFood(Food food){
         return foodRepository.save(food);
+
     }
+
 
     public int calc(Person person){
-        int calAmount;
-        double kg = person.getWeight() / 2.2;
-        double bmr;
+        int calAmount = 0;
+            double kg = person.getWeight()/2.2;
+            if(person.getGender().equals("Female")){
+                double BMR = kg * 0.9 * 24;
+                if(person.getBodyFat() <= 18){
+                    BMR = BMR * 1.0;
+                }
+                else if(person.getBodyFat() <= 28){
+                    BMR = BMR * 0.95;
+                }
+                else if(person.getBodyFat() <= 38){
+                    BMR = BMR * 0.90;
+                }
+                else{
+                    BMR = BMR * 0.85;
+                }
 
-        //get bmr based on gender
-        if(person.getGender() == Gender.FEMALE) {
-            bmr = kg * 0.9 * 24;
-            if (person.getBodyFat() > 38) {
-                bmr *= .85;
-            }
-            else if (person.getBodyFat() > 28) {
-                bmr *= 0.9;
-            }
-            else if (person.getBodyFat() > 18) {
-                bmr *= 0.95;
-            }
-        }
-        else {
-            bmr = kg * 24;
-            if(person.getBodyFat() > 28){
-                bmr *= .85;
-            }
-            else if(person.getBodyFat() > 20){
-                bmr *= 0.90;
-            }
-            else if(person.getBodyFat() > 14){
-                bmr *= 0.95;
-            }
-        }
+                if(person.getActivityLevel().equals("Very Low")){
+                    calAmount = (int)(BMR * 1.3);
+                }
+                if(person.getActivityLevel().equals("Low")){
+                    calAmount = (int)(BMR * 1.55);
+                }
+                if(person.getActivityLevel().equals("Moderate")){
+                    calAmount = (int)(BMR * 1.65);
+                }
+                if(person.getActivityLevel().equals("High")){
+                    calAmount = (int)(BMR * 1.8);
+                }
+                if(person.getActivityLevel().equals("Very High")) {
+                    calAmount = (int) (BMR * 2.0);
+                }
 
-        // get cal amt based on activity lvl
-        if(person.getActivityLevel() == ActivityLevel.VERYLOW){
-            calAmount = (int)(bmr * 1.3);
-        }
-        else if(person.getActivityLevel() == ActivityLevel.LOW){
-            calAmount = (int)(bmr * 1.55);
-        }
-        else if(person.getActivityLevel() == ActivityLevel.MODERATE){
-            calAmount = (int)(bmr * 1.65);
-        }
-        else if(person.getActivityLevel() == ActivityLevel.HIGH){
-            calAmount = (int)(bmr * 1.8);
-        }
-        else {
-            calAmount = (int)(bmr * 2.0);
-        }
+            }
+            if(person.getGender().equals("Male")){
+                double BMR = kg * 24;
+                if(person.getBodyFat() <= 14){
+                    BMR = BMR * 1.0;
+                }
+                else if(person.getBodyFat() <= 20){
+                    BMR = BMR * 0.95;
+                }
+                else if(person.getBodyFat() <= 28){
+                    BMR = BMR * 0.90;
+                }
+                else{
+                    BMR = BMR * 0.85;
+                }
+                if(person.getActivityLevel().equals("Very Low")){
+                    calAmount = (int)(BMR * 1.3);
+                }
+                if(person.getActivityLevel().equals("Low")){
+                    calAmount = (int)(BMR * 1.55);
+                }
+                if(person.getActivityLevel().equals("Moderate")){
+                    calAmount = (int)(BMR * 1.65);
+                }
+                if(person.getActivityLevel().equals("High")){
+                    calAmount = (int)(BMR * 1.8);
+                }
+                if(person.getActivityLevel().equals("Very High")) {
+                    calAmount = (int) (BMR * 2.0);
+                }
 
-        // adjust cal amt based on goal
-        if(person.getGoal() == Goal.MAINTAIN) {
+
+
+            }
+        if(person.getGoal().equals("Maintain Weight")) {
             return calAmount;
         }
-        else if(person.getGoal() == Goal.LOSE){
+
+
+
+        if(person.getGoal().equals("Lose Weight")){
             return calAmount - 500;
+
+
         }
-        else {
+
+        if(person.getGoal().equals("Gain Weight")){
             return calAmount + 400;
+
         }
+        if(calAmount < 1200){
+            return 1200;
+        }
+
+        return calAmount;
+
     }
+
+
+
 
     public Map<String, Food> foodSuggestion(int cal){
         //TODO @Mahima: learn maps -> take cal as input, return a map -> food list, {breakfast, {food list}}

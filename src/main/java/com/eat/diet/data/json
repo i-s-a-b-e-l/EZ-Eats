@@ -90,7 +90,7 @@
     "recipe": "https://www.eatthismuch.com/recipe/nutrition/apple-crumble,907198/"
     },
     {
-    "name": "Keto Mug English English Muffin",
+    "name": "Keto Mug English Muffin",
     "calories": 86,
     "type": "breakfast",
     "vegetarian": true,
@@ -187,7 +187,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "https://www.eatthismuch.com/recipe/nutrition/peanut-butter-and-banana-toast,1014207/"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/peanut-butter-banana-toast,39533/"
     },
     {
     "name": "Strawberry Spinach Green Smoothie",
@@ -247,7 +247,7 @@
     "vegan": true,
     "paleo": false,
     "keto": false,
-    "recipe": "eatthismuch.com/recipe/nutrition/chocolate-avocado-smoothie,906544/"
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/chocolate-avocado-smoothie,906544/"
     },
     {
     "name": "Peach Yogurt Parfait",

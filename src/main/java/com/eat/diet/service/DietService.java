@@ -2,9 +2,13 @@ package com.eat.diet.service;
 
 import com.eat.diet.repo.FoodRepository;
 import com.eat.diet.repo.model.*;
+import com.mongodb.client.FindIterable;
+//import jdk.internal.loader.BuiltinClassLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -80,6 +84,11 @@ public class DietService {
 
     public Map<String, Food> foodSuggestion(int cal){
         //TODO @Mahima: learn maps -> take cal as input, return a map -> food list, {breakfast, {food list}}
+        Map foods = new HashMap<>();
+
+        FindIterable<Document> findIterable = Food.find(eq("breakfast", ));
+
+
         return null;
     }
 

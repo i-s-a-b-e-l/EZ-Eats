@@ -1,6 +1,7 @@
 package com.eat.diet.repo.model;
 
 
+import com.mongodb.client.FindIterable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +28,10 @@ public class Food {
     public Food(){
         name = "";
         calories = 0;
+    }
+
+    public static FindIterable<Document> find(Document document) {
+
     }
 }
 

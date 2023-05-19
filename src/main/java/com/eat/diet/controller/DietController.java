@@ -23,6 +23,7 @@ public class DietController {
         return "index";
     }
 
+    //testing purpose
     @PostMapping("/api/food")
     public String addFood(@RequestBody Food food) {
         dietService.addFood(food);

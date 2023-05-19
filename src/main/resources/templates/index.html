@@ -12,58 +12,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <h1 id="Title">EZ Eats</h1>
     <h2 id="Subtitle">A personalized diet builder</h2>
-
-    <div class="btn-group d-flex" role="group">
+    <div class="container-flex px-5">
+    <div class="btn-group d-flex py-2" role="group">
         <input type="radio" class="btn-check" name="Diet-type" id="Anything" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Anything">Anything</label>
+        <label class="btn btn-outline-primary text-black" for="Anything">Anything</label>
 
         <input type="radio" class="btn-check" name="Diet-type" id="Vegetarian" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Vegetarian">Vegetarian</label>
+        <label class="btn btn-outline-primary text-black" for="Vegetarian">Vegetarian</label>
 
         <input type="radio" class="btn-check" name="Diet-type" id="Vegan" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Vegan">Vegan</label>
+        <label class="btn btn-outline-primary text-black" for="Vegan">Vegan</label>
 
         <input type="radio" class="btn-check" name="Diet-type" id="Paleo" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Paleo">Paleo</label>
+        <label class="btn btn-outline-primary text-black" for="Paleo">Paleo</label>
 
         <input type="radio" class="btn-check" name="Diet-type" id="Keto" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Keto">Keto</label>
+        <label class="btn btn-outline-primary text-black" for="Keto">Keto</label>
     </div>
-    <br>
-    <div class="btn-group d-flex" role="group">
+
+    <div class="btn-group d-flex py-2 role="group">
         <input type="radio" class="btn-check" name="Weight-goal" id="Lose" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Lose">Lose</label>
+        <label class="btn btn-outline-primary text-black" for="Lose">Lose</label>
 
         <input type="radio" class="btn-check" name="Weight-goal" id="Maintain" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Maintain">Maintain</label>
+        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain</label>
 
         <input type="radio" class="btn-check" name="Weight-goal" id="Gain" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Gain">Gain</label>
+        <label class="btn btn-outline-primary text-black" for="Gain">Gain</label>
     </div>
-    <br>
-    <div class="btn-group d-flex" role="group">
+
+    <div class="btn-group d-flex py-2" role="group">
         <input type="radio" class="btn-check" name="Gender" id="Male" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Male">Male</label>
+        <label class="btn btn-outline-primary text-black" for="Male">Male</label>
 
         <input type="radio" class="btn-check" name="Gender" id="Female" autocomplete="off">
-        <label class="btn btn-outline-primary" for="Female">Female</label>
-    </div>
-    <br>
-    <div class="row g-3 align-items-center">
-        <div class="col-auto">
-            <label for="weight" class="col-form-label">Weight</label>
-        </div>
-        <div class="col-auto">
-            <input type="text" id="weight" class="form-control">
-        </div>
+        <label class="btn btn-outline-primary text-black" for="Female">Female</label>
     </div>
 
-    <div class="row g-3 align-items-center">
+    <div class="row g-3 align-items-start  py-2">
         <div class="col-auto">
-            <label for="body-fat" class="col-form-label">Body-fat</label>
+            <input type="text" id="weight" class="form-control" placeholder="Weight">
         </div>
+
         <div class="col-auto">
-            <input type="text" id="body-fat" class="form-control">
+            <input type="text" id="body-fat" class="form-control" placeholder="Body-fat">
         </div>
     </div>
 
@@ -81,22 +73,6 @@
         </ul>
     </div>
         <input class="btn btn-primary btn-lg" type="submit" value="Calculate">
-<!--    <div class = "Diet">-->
-<!--        <button type="button" class = "fiveB">Anything</button>-->
-<!--        <button type="button" class = "fiveB">Vegetarian</button>-->
-<!--        <button type="button" class = "fiveB">Vegan</button>-->
-<!--        <button type="button" class = "fiveB">Paleo</button>-->
-<!--        <button type="button" class = "fiveB">Keto</button>-->
-<!--    </div>-->
-<!--    <div class = "Gender">-->
-<!--        <button type="button" class = "twoB">Male</button>-->
-<!--        <button type="button" class = "twoB">Female</button>-->
-<!--    </div>-->
-<!--    <div class = "Height">-->
-<!--        <form>-->
-<!--            <input type = "text" class = "twoF"> <label>ft</label>-->
-<!--            <input type = "text" class = "twoF"><label>in</label>-->
-<!--        </form>-->
-<!--    </div>-->
+    </div>
 </body>
 </html>

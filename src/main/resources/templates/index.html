@@ -13,7 +13,7 @@
     <h1 id="Title">EZ Eats</h1>
     <h2 id="Subtitle">A personalized diet builder</h2>
     <div class="container-flex px-5">
-    <div class="btn-group d-flex py-2" role="group">
+    <div class="btn-group d-flex mb-sm-2" role="group">
         <input type="radio" class="btn-check" name="Diet-type" id="Anything" autocomplete="off">
         <label class="btn btn-outline-primary text-black" for="Anything">Anything</label>
 
@@ -30,7 +30,7 @@
         <label class="btn btn-outline-primary text-black" for="Keto">Keto</label>
     </div>
 
-    <div class="btn-group d-flex py-2 role="group">
+    <div class="btn-group d-flex mb-sm-2 role="group">
         <input type="radio" class="btn-check" name="Weight-goal" id="Lose" autocomplete="off">
         <label class="btn btn-outline-primary text-black" for="Lose">Lose</label>
 
@@ -41,7 +41,7 @@
         <label class="btn btn-outline-primary text-black" for="Gain">Gain</label>
     </div>
 
-    <div class="btn-group d-flex py-2" role="group">
+    <div class="btn-group d-flex mb-sm-2" role="group">
         <input type="radio" class="btn-check" name="Gender" id="Male" autocomplete="off">
         <label class="btn btn-outline-primary text-black" for="Male">Male</label>
 
@@ -49,30 +49,56 @@
         <label class="btn btn-outline-primary text-black" for="Female">Female</label>
     </div>
 
-    <div class="row g-3 align-items-start  py-2">
-        <div class="col-auto">
-            <input type="text" id="weight" class="form-control" placeholder="Weight">
-        </div>
-
-        <div class="col-auto">
-            <input type="text" id="body-fat" class="form-control" placeholder="Body-fat">
-        </div>
+    <div class="form-floating mb-sm-2">
+        <input type="text" class="form-control" id="weight" placeholder="Weight">
+        <label for="weight">Weight</label>
+    </div>
+    <div class="form-floating mb-sm-2">
+        <input type="text" class="form-control" id="body-fat" placeholder="Body-fat">
+        <label for="body-fat">Body-fat</label>
+    </div>
+    <div class="form-floating mb-sm-2">
+        <input type="text" class="form-control" id="age" placeholder="Age">
+        <label for="age">Age</label>
     </div>
 
 
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-outline-primary dropdown-toggle text-black mb-sm-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Activity Level
         </button>
+<!--        <ul class="dropdown-menu">-->
+<!--            <li><a class="dropdown-item" href="#">Very Low</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Low</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Moderate</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">High</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Very High</a></li>-->
+<!--        </ul>-->
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Sedentary</a></li>
-            <li><a class="dropdown-item" href="#">Lightly Active</a></li>
-            <li><a class="dropdown-item" href="#">Moderately Active</a></li>
-            <li><a class="dropdown-item" href="#">Very Active</a></li>
-            <li><a class="dropdown-item" href="#">Extremely Active</a></li>
+            <li><a class="dropdown-item" href="#">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="veryLow" checked>
+                <label class="form-check-label" for="veryLow">Very Low</label>
+            </a></li>
+            <li><a class="dropdown-item" href="#">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="low" checked>
+                <label class="form-check-label" for="low">Low</label>
+            </a></li>
+            <li><a class="dropdown-item" href="#">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="moderate" checked>
+                <label class="form-check-label" for="moderate">Moderate</label>
+            </a></li>
+            <li><a class="dropdown-item" href="#">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="high" checked>
+                <label class="form-check-label" for="high">High</label>
+            </a></li>
+            <li><a class="dropdown-item" href="#">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="veryHigh" checked>
+                <label class="form-check-label" for="veryHigh">Very High</label>
+            </a></li>
         </ul>
     </div>
-        <input class="btn btn-primary btn-lg" type="submit" value="Calculate">
+
+        <input class="btn btn-primary" type="submit" value="Calculate">
     </div>
 </body>
 </html>

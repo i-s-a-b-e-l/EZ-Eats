@@ -88,7 +88,7 @@ public class DietService {
 
             // Filter all foods to be combination less than calories.
             for (Food f1 : allBreakfastsLessThanCalories) {
-                //List returns all foods whose sum with f1.calogies <= calories
+                //List returns all foods whose sum with f1.calories <= calories
                 List<Food> comboFoodsLessThanCalories = allBreakfastsLessThanCalories
                         .stream()
                         .filter(f2 -> f2.getName() != f1.getName()) //Exclude the comparing food.

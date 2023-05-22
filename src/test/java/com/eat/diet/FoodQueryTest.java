@@ -56,7 +56,7 @@ public class FoodQueryTest {
 
 
         lists.forEach(l -> {
-            List<Food> foods = dietService.addFoodsUntilCalories(l, 400);
+            List<Food> foods = dietService.addFoodsUntilCalories(l, 900);
             foods.forEach(l1 -> System.out.println(l1.getName() + ":" + l1.getCalories()) );
             System.out.println("-----------------");
         });

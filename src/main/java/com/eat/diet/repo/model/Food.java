@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Entity
-@Document(collation = "food")
+@Document(collection = "food")
 public class Food {
     @Id
     private String id;
@@ -25,13 +25,5 @@ public class Food {
     private String recipe; // url to some recipe
     private String img;
 
-    public Food(){
-        name = "";
-        calories = 0;
-    }
-
-    public static FindIterable<Document> find(Document document) {
-
-    }
 }
 

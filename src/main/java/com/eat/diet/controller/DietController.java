@@ -33,7 +33,7 @@ public class DietController {
     @PostMapping("/api/diet")
     public String diet(@RequestBody Person person) {
         int cal = dietService.calc(person);
-        dietService.foodSuggestion(cal);
+        dietService.planMealForBreakfast(cal);
 
         //TODO @Zoey: render the above in the html page
         return "index";

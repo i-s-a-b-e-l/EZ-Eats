@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Data
 public class Person {
-    private String name;
+
     private int weight;
     private Gender gender;
     private ActivityLevel activityLevel;
@@ -13,8 +13,8 @@ public class Person {
     private Pref pref; //Vegetarian, Vegan, or Non-vegetarian
     private Goal goal;
 
-    public Person(String name, int weight, Gender gender, ActivityLevel activityLevel, int bodyFat, Pref pref, Goal goal){
-        this.name = name;
+    public Person( int weight, Gender gender, ActivityLevel activityLevel, int bodyFat, Pref pref, Goal goal){
+
         this.weight = weight;
         this.gender = gender;
         this.activityLevel = activityLevel;

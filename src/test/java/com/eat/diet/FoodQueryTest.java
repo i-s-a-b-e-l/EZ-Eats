@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @SpringBootTest
@@ -52,11 +51,11 @@ public class FoodQueryTest {
 
         Assert.notNull(dietService, "DietService not found");
 
-        List<List<Food>> lists = dietService.planMealForBreakfast(400);
+        List<List<Food>> lists = dietService.planMeal(400, "breakfast");
 
 
         lists.forEach(l -> {
-            List<Food> foods = dietService.addFoodsUntilCalories(l, 900);
+            List<Food> foods = dietService.addFoodsUntilCalories(l, 1000);
             foods.forEach(l1 -> System.out.println(l1.getName() + ":" + l1.getCalories()) );
             System.out.println("-----------------");
         });

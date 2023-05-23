@@ -328,5 +328,370 @@
     "keto": false,
     "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
     "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+
+
+
+
+
+
+  {
+    "name": "Mixed Greens with Sliced Cucumber and Avocado",
+    "calories": 160,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Quick Buffalo Chicken Salad",
+    "calories": 228,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Apples and Almond Butter",
+    "calories": 291,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Chicken Celery Sticks",
+    "calories": 341,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Tuna with Avocado",
+    "calories": 296,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Hummus Pocket Sandwich",
+    "calories": 445,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Vegan Strawberry Protein Smoothie",
+    "calories": 384,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Spinach Tomato Salad",
+    "calories": 186,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Kale White Bean and Pesto Salad",
+    "calories": 423,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Hummus Chickpea Snack Sandwiches",
+    "calories": 143,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Ole Salad",
+    "calories": 334,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Almond Milk Cocoa Protein Shake",
+    "calories": 241,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Cauliflower and Tahini",
+    "calories": 207,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Pinapple & Avocado Salad",
+    "calories": 160,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Celery with Homemade Hummus",
+    "calories": 186,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "asdf",
+    "calories": 160,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Raw Broccoli Salad",
+    "calories": 694,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Red Cabbage Slaw with Lime and Onions",
+    "calories": 25,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Balsamic Arugula Avocado",
+    "calories": 61,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Salmon Wrapped Avocado",
+    "calories": 486,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Tuna with Avocado",
+    "calories": 296,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Tuna Stuffed Pepper",
+    "calories": 200,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": true,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Paleo Avocado Tuna Salad",
+    "calories": 514,
+    "type": "lunch",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": true,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Lemon Berry Smoothie",
+    "calories": 90,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "asdf",
+    "calories": 160,
+    "type": "lunch",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "https://www.eatthismuch.com/recipe/nutrition/tropical-smoothie,905577/",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+
+
+
+
+
+
+
+  {
+    "name": "Mediterranean Salad",
+    "calories": 103,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Ham and Cheese Chicken Roll-ups",
+    "calories": 1633,
+    "type": "dinner",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Cucumber Apple Salad",
+    "calories": 98,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Bacon Wrapped Trout with Rosemary",
+    "calories": 599,
+    "type": "dinner",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Simple Fennel and Orange Salad",
+    "calories": 159,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Carrots",
+    "calories": 86,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Tuna Wok",
+    "calories": 494,
+    "type": "dinner",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
   }
 ]

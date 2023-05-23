@@ -79,17 +79,27 @@ public class DietService {
      * @param calories
      * @return
      */
-    public List<List<Food>> planMealForBreakfast(int calories) {
+    public List<List<Food>> planMeal (int calories, String meal) {
         List<List<Food>> foods = new ArrayList<>();
+        int perMeal = calories / 3;
 
         try {
             //Retrieve all foods less than <calories>
-            List<Food> allBreakfastsLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(calories);
+            List<Food> allMealsLessThanCalories;
+            if (meal.equals("breakfast")) {
+                allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(perMeal);
+            }
+            else if (meal.equals("lunch")) {
+                allMealsLessThanCalories = foodRepository.findAllLunchLessThanCalories(perMeal);
+            }
+            else {
+                allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCalories(perMeal);
+            }
 
             // Filter all foods to be combination less than calories.
-            for (Food f1 : allBreakfastsLessThanCalories) {
+            for (Food f1 : allMealsLessThanCalories) {
                 //List returns all foods whose sum with f1.calories <= calories
-                List<Food> comboFoodsLessThanCalories = allBreakfastsLessThanCalories
+                List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
                         .stream()
                         .filter(f2 -> f2.getName() != f1.getName()) //Exclude the comparing food.
                         .filter(f2 -> f1.getCalories() + f2.getCalories() <= calories) // Find if sum is less than calories
@@ -107,7 +117,12 @@ public class DietService {
             log.info(e.getMessage(), e);
             throw new RuntimeException(e);
         }
+        log.info("foods size {}",foods.size());
+        log.info("foods first item size {}",foods.get(0).size());
+        log.info("foods first item list {}",foods.get(0));
 
+        log.info("foods ten item size {}",foods.get(10).size());
+        log.info("foods ten item list {}",foods.get(10));
         return foods;
     }
 
@@ -126,14 +141,14 @@ public class DietService {
         try {
             Integer currentSum = foodList.stream().map(l -> l.getCalories()).collect(Collectors.summingInt(Integer::intValue));
             List<String> foodNamesList = foodList.stream().map(l -> l.getName()).collect(Collectors.toList());
-            //Retrieve all foods less than <calories-currentSum>
+            // Retrieve all foods less than <calories-currentSum>
             List<Food> allBreakfastLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(calories - currentSum);
 
             return allBreakfastLessThanCalories.stream().filter(l -> !foodNamesList.contains(l.getName())).findFirst();
 
         } catch (Exception e) {
             log.info(e.getMessage(), e);
-//            throw new RuntimeException(e);
+            // throw new RuntimeException(e);
         }
         return Optional.empty();
     }
@@ -150,6 +165,4 @@ public class DietService {
     public int sumOfFoodsCalories(List<Food> foodList) {
         return foodList.stream().map(l -> l.getCalories()).collect(Collectors.summingInt(Integer::intValue));
     }
-
-
 }

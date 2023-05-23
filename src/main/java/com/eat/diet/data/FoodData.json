@@ -693,5 +693,82 @@
     "keto": false,
     "recipe": "asdf",
     "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Herb and Lemon Fish",
+    "calories": 65,
+    "type": "dinner",
+    "vegetarian": false,
+    "vegan": false,
+    "paleo": false,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Simple Spinach Salad",
+    "calories": 162,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Flat Bread Pizza",
+    "calories": 592,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": false,
+    "paleo": true,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Easy Steamed Green Beans",
+    "calories": 31,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "California Melt",
+    "calories": 311,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Green Pea and Almond Salad",
+    "calories": 317,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": false,
+    "keto": false,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
+  },
+  {
+    "name": "Carrots with Hummus",
+    "calories": 175,
+    "type": "dinner",
+    "vegetarian": true,
+    "vegan": true,
+    "paleo": true,
+    "keto": true,
+    "recipe": "asdf",
+    "img": "Downloads/demo 2/src/main/java/resources/static/placeholder.png"
   }
 ]

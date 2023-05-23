@@ -24,7 +24,17 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{type:'lunch', calories: {$lt: ?0 } }")
     List<Food> findAllLunchLessThanCalories(int calories);
 
+    @Query("{type:'dinner'}")
+    List<Food> findAllDinner();
+
+    @Query("{type:'breakfast', calories: {$lt: ?0 } }")
+    List<Food> findAllDinnerLessThanCalories(int calories);
+
     @Query("{calories: { $lt: ?0 }  }")
     List<Food> findAllFoodsLessThanCalories(int calories);
+
+
+
+
 
 }

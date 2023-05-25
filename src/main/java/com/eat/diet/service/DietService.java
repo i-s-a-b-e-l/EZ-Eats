@@ -23,7 +23,7 @@ public class DietService {
     }
 
     public int calc(Person person) {
-        int calAmount;
+        int totalCalories;
         double kg = person.getWeight() / 2.2;
         double bmr;
 
@@ -50,38 +50,36 @@ public class DietService {
 
         // get cal amt based on activity lvl
         if (person.getActivityLevel() == ActivityLevel.VERYLOW) {
-            calAmount = (int) (bmr * 1.3);
+            totalCalories = (int)(bmr * 1.3);
         } else if (person.getActivityLevel() == ActivityLevel.LOW) {
-            calAmount = (int) (bmr * 1.55);
+            totalCalories = (int)(bmr * 1.55);
         } else if (person.getActivityLevel() == ActivityLevel.MODERATE) {
-            calAmount = (int) (bmr * 1.65);
+            totalCalories = (int)(bmr * 1.65);
         } else if (person.getActivityLevel() == ActivityLevel.HIGH) {
-            calAmount = (int) (bmr * 1.8);
+            totalCalories = (int)(bmr * 1.8);
         } else {
-            calAmount = (int) (bmr * 2.0);
+            totalCalories = (int)(bmr * 2.0);
         }
 
         // adjust cal amt based on goal
-        if (person.getGoal() == Goal.MAINTAIN) {
-            return calAmount;
-        } else if (person.getGoal() == Goal.LOSE) {
-            return calAmount - 500;
-        } else {
-            return calAmount + 400;
+        if (person.getGoal() == Goal.GAIN) {
+            totalCalories += 400;
         }
+        else if (person.getGoal() == Goal.LOSE) {
+            totalCalories -= 500;
+        }
+        return totalCalories;
     }
 
     /**
-     * TODO Implement for planMealForCalorie
-     * <p>
      * Find TWO Foods whose sum of calories will be less than Calories.
      *
-     * @param calories
-     * @return
+     * @param meal - which meal to plan for
+     * @return - list of combinations of foods whose sum is less than the calorie count
      */
-    public List<List<Food>> planMeal (int calories, String meal) {
+    public List<List<Food>> planMeal (String meal, int totalCalories) {
         List<List<Food>> foods = new ArrayList<>();
-        int perMeal = calories / 3;
+        int perMeal = totalCalories / 3;
 
         try {
             //Retrieve all foods less than <calories>
@@ -101,8 +99,8 @@ public class DietService {
                 //List returns all foods whose sum with f1.calories <= calories
                 List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
                         .stream()
-                        .filter(f2 -> f2.getName() != f1.getName()) //Exclude the comparing food.
-                        .filter(f2 -> f1.getCalories() + f2.getCalories() <= calories) // Find if sum is less than calories
+                        .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
+                        .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
                         .collect(Collectors.toList());
 
                 comboFoodsLessThanCalories.stream().forEach(f -> {
@@ -117,23 +115,24 @@ public class DietService {
             log.info(e.getMessage(), e);
             throw new RuntimeException(e);
         }
+
+        // testing
         log.info("foods size {}",foods.size());
         log.info("foods first item size {}",foods.get(0).size());
         log.info("foods first item list {}",foods.get(0));
-
         log.info("foods ten item size {}",foods.get(10).size());
         log.info("foods ten item list {}",foods.get(10));
+
         return foods;
     }
 
     /**
      * Return first Food that is less than calories comparing the foodList
      *
-     * @param foodList
-     * @param calories
-     * @return
+     * @param foodList - list of foods
+     * @return - optional
      */
-    public Optional<Food> getFoodLessThanCaloriesExcludingList(List<Food> foodList, int calories) {
+    public Optional<Food> getFoodLessThanCaloriesExcludingList(List<Food> foodList, int totalCalories) {
 
         List<Food> foods = new ArrayList<>();
         foods.addAll(foodList);
@@ -142,7 +141,7 @@ public class DietService {
             Integer currentSum = foodList.stream().map(l -> l.getCalories()).collect(Collectors.summingInt(Integer::intValue));
             List<String> foodNamesList = foodList.stream().map(l -> l.getName()).collect(Collectors.toList());
             // Retrieve all foods less than <calories-currentSum>
-            List<Food> allBreakfastLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(calories - currentSum);
+            List<Food> allBreakfastLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(totalCalories / 3 - currentSum);
 
             return allBreakfastLessThanCalories.stream().filter(l -> !foodNamesList.contains(l.getName())).findFirst();
 
@@ -153,16 +152,62 @@ public class DietService {
         return Optional.empty();
     }
 
-    public List<Food> addFoodsUntilCalories(List<Food> foodList, int calories) {
+    /**
+     * keeps adding foods to the <foodList> until <caloriesPerMeal> is reached
+     *
+     * @param foodList - list of foods
+     * @param caloriesPerMeal - add foods to each meal based on calories per meal
+     * @return - a new list of foods
+     */
+    public List<Food> addFoodsUntilCalories(List<Food> foodList, int caloriesPerMeal) {
         List<Food> responseList = new ArrayList<>();
         responseList.addAll(foodList);
-        while (sumOfFoodsCalories(responseList) < calories && getFoodLessThanCaloriesExcludingList(responseList, calories).isPresent()) {
-            responseList.add(getFoodLessThanCaloriesExcludingList(responseList, calories).get());
+        while (sumOfFoodsCalories(responseList) < caloriesPerMeal && getFoodLessThanCaloriesExcludingList(responseList, caloriesPerMeal).isPresent()) {
+            responseList.add(getFoodLessThanCaloriesExcludingList(responseList, caloriesPerMeal).get());
         }
         return responseList;
     }
 
+    /**
+     * returns the total calories of all foods in <foodList>
+     * @param foodList - list of foods
+     * @return int sum of foods
+     */
     public int sumOfFoodsCalories(List<Food> foodList) {
         return foodList.stream().map(l -> l.getCalories()).collect(Collectors.summingInt(Integer::intValue));
+    }
+
+    /**
+     * method that will be called from diet controller
+     * picks out a random meal from the generated possibilities & formats it to be html friendly
+     *
+     * @param meal - which type of food to pick
+     * @return - randomly picked food combo of size 2
+     */
+    public List<Map<String, String>> pickMeal(String meal, int totalCalories) {
+        List<List<Food>> lists = planMeal(meal, totalCalories);
+        for (int i = 0; i < lists.size(); i++) {
+            lists.set(i, addFoodsUntilCalories(lists.get(i), totalCalories / 3));
+        }
+        int index = (int)(Math.random() * lists.size());
+        List<Food> choice = lists.get(index);
+        while (choice.size() > 2) {
+            choice = lists.get(index);
+            index = (int)(Math.random() * lists.size());
+        }
+
+        List<Map<String, String>> plan = new ArrayList<>();
+        for (int i = 0; i < choice.size(); i++) {
+            plan.add(i, new HashMap<String, String>());
+        }
+        for (int i = 0; i < choice.size(); i++) {
+            plan.get(i).put("name", choice.get(i).getName());
+            plan.get(i).put("calories", String.valueOf(choice.get(i).getCalories()));
+            plan.get(i).put("vegetarian", String.valueOf(choice.get(i).isVegetarian()));
+            plan.get(i).put("vegan", String.valueOf(choice.get(i).isVegan()));
+            plan.get(i).put("paleo", String.valueOf(choice.get(i).isPaleo()));
+            plan.get(i).put("keto", String.valueOf(choice.get(i).isKeto()));
+        }
+        return plan;
     }
 }

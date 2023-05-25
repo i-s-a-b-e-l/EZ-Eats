@@ -17,45 +17,45 @@
         <input type="radio" class="btn-check" name="Diet-type" id="Anything" autocomplete="off">
         <label class="btn btn-outline-primary text-black" for="Anything">Anything</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Vegetarian" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Vegetarian" autocomplete="off" value="VEGETARIAN">
         <label class="btn btn-outline-primary text-black" for="Vegetarian">Vegetarian</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Vegan" autocomplete="off">
+        <input type="radio" class="btn-check" name="Diet-type" id="Vegan" autocomplete="off" value="VEGAN">
         <label class="btn btn-outline-primary text-black" for="Vegan">Vegan</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Paleo" autocomplete="off">
+        <input type="radio" class="btn-check" name="Diet-type" id="Paleo" autocomplete="off" value="PALEO">
         <label class="btn btn-outline-primary text-black" for="Paleo">Paleo</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Keto" autocomplete="off">
+        <input type="radio" class="btn-check" name="Diet-type" id="Keto" autocomplete="off" value="KETO">
         <label class="btn btn-outline-primary text-black" for="Keto">Keto</label>
     </div>
 
     <div class="btn-group d-flex mb-sm-2">
-        <input type="radio" class="btn-check" name="Weight-goal" id="Lose" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Lose">Lose</label>
+        <input type="radio" class="btn-check" name="Weight-goal" id="Lose" autocomplete="off" value="LOSE">
+        <label class="btn btn-outline-primary text-black" for="Lose">Lose Weight</label>
 
-        <input type="radio" class="btn-check" name="Weight-goal" id="Maintain" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain</label>
+        <input type="radio" class="btn-check" name="Weight-goal" id="Maintain" autocomplete="off" value="MAINTAIN">
+        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain Weight</label>
 
-        <input type="radio" class="btn-check" name="Weight-goal" id="Gain" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Gain">Gain</label>
+        <input type="radio" class="btn-check" name="Weight-goal" id="Gain" autocomplete="off" value="GAIN">
+        <label class="btn btn-outline-primary text-black" for="Gain">Gain Weight</label>
     </div>
 
     <div class="btn-group d-flex mb-sm-2" role="group">
-        <input type="radio" class="btn-check" name="Gender" id="Male" autocomplete="off">
+        <input type="radio" class="btn-check" name="Gender" id="Male" autocomplete="off" value="MALE">
         <label class="btn btn-outline-primary text-black" for="Male">Male</label>
 
-        <input type="radio" class="btn-check" name="Gender" id="Female" autocomplete="off">
+        <input type="radio" class="btn-check" name="Gender" id="Female" autocomplete="off" value="FEMALE">
         <label class="btn btn-outline-primary text-black" for="Female">Female</label>
     </div>
 
     <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" id="weight" placeholder="Weight">
+        <input type="text" class="form-control" id="weight" placeholder="Weight (lbs)">
         <label for="weight">Weight</label>
     </div>
     <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" id="body-fat" placeholder="Body-fat">
-        <label for="body-fat">Body-fat</label>
+        <input type="text" class="form-control" id="bodyfat" placeholder="Body-fat (%)">
+        <label for="bodyfat">Body-fat</label>
     </div>
     <div class="form-floating mb-sm-2">
         <input type="text" class="form-control" id="age" placeholder="Age">
@@ -101,5 +101,6 @@
             <input class="btn btn-primary" type="submit" value="Calculate">
         </a>
         </form>
+    </div>
 </body>
 </html>

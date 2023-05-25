@@ -12,6 +12,25 @@
     text-align: center;
 }
 
+/*.btn-outline-primary*/
+/*{*/
+/*    border: 1px solid #19B550 !important;*/
+
+/*}*/
+
+/*.btn:hover*/
+/*{*/
+/*    background-color: #19B550 !important;*/
+/*    border-color: #19B550 !important;*/
+/*    transition: 0.5s !important;*/
+/*}*/
+
+/*.btn:active*/
+/*{*/
+/*    background-color: #19B550 !important;*/
+/*    transition: 0.5s !important;*/
+/*}*/
+
 /*.gender, .weight-goal*/
 /*{*/
 /*    display: flex;*/

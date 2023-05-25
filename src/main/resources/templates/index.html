@@ -96,10 +96,10 @@
                 <label class="form-check-label" for="veryHigh">Very High</label>
             </a></li>
         </ul>
-    </div>
+        <form method="post" th:action="@{/submit-form}">
         <a href="mealPlan.html">
-        <input class="btn btn-primary" type="submit" value="Calculate">
+            <input class="btn btn-primary" type="submit" value="Calculate">
         </a>
-    </div>
+        </form>
 </body>
 </html>

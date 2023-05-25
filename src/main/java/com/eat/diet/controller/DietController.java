@@ -11,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @Slf4j
 public class DietController {
@@ -35,8 +38,9 @@ public class DietController {
     @PostMapping("/api/diet")
     public String diet(@RequestBody Person person) {
         int cal = dietService.calc(person);
-        log.info("the required cal is {}", cal);
-        dietService.planMeal(cal, "breakfast");
+        List<Map<String, String>> breakfast = dietService.pickMeal("breakfast", cal);
+        List<Map<String, String>> lunch = dietService.pickMeal("lunch", cal);
+        List<Map<String, String>> dinner = dietService.pickMeal("dinner", cal);
 
         //TODO @Zoey: render the above in the html page
         return "index";

@@ -10,53 +10,63 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        // JavaScript code to check for the presence of the message attribute and display an alert
+        var incomplete = /*[[${message}]]*/ null;
+        if (incomplete) {
+            alert(message);
+        }
+        /*]]>*/
+    </script>
     <h1 id="Title">EZ Eats</h1>
-    <h2 id="Subtitle">A personalized diet builder</h2>
+    <h2 id="Subtitle">A personalized diet builder</h2>        <form method="post" th:action="@{/diet}">
+
     <div class="container-flex mx-5">
     <div class="btn-group d-flex mb-sm-2" role="group">
-        <input type="radio" class="btn-check" name="Diet-type" id="Anything" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Anything" autocomplete="off">
         <label class="btn btn-outline-primary text-black" for="Anything">Anything</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Vegetarian" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Vegetarian" autocomplete="off" value="VEGETARIAN">
         <label class="btn btn-outline-primary text-black" for="Vegetarian">Vegetarian</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Vegan" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Vegan" autocomplete="off" value="VEGAN">
         <label class="btn btn-outline-primary text-black" for="Vegan">Vegan</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Paleo" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Paleo" autocomplete="off" value="PALEO">
         <label class="btn btn-outline-primary text-black" for="Paleo">Paleo</label>
 
-        <input type="radio" class="btn-check" name="Diet-type" id="Keto" autocomplete="off">
+        <input type="radio" class="btn-check" name="pref" id="Keto" autocomplete="off" value="KETO">
         <label class="btn btn-outline-primary text-black" for="Keto">Keto</label>
     </div>
 
     <div class="btn-group d-flex mb-sm-2">
-        <input type="radio" class="btn-check" name="Weight-goal" id="Lose" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Lose">Lose</label>
+        <input type="radio" class="btn-check" name="goal" id="Lose" autocomplete="off" value="LOSE">
+        <label class="btn btn-outline-primary text-black" for="Lose">Lose Weight</label>
 
-        <input type="radio" class="btn-check" name="Weight-goal" id="Maintain" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain</label>
+        <input type="radio" class="btn-check" name="goal" id="Maintain" autocomplete="off" value="MAINTAIN">
+        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain Weight</label>
 
-        <input type="radio" class="btn-check" name="Weight-goal" id="Gain" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Gain">Gain</label>
+        <input type="radio" class="btn-check" name="goal" id="Gain" autocomplete="off" value="GAIN">
+        <label class="btn btn-outline-primary text-black" for="Gain">Gain Weight</label>
     </div>
 
     <div class="btn-group d-flex mb-sm-2" role="group">
-        <input type="radio" class="btn-check" name="Gender" id="Male" autocomplete="off">
+        <input type="radio" class="btn-check" name="gender" id="Male" autocomplete="off" value="MALE">
         <label class="btn btn-outline-primary text-black" for="Male">Male</label>
 
-        <input type="radio" class="btn-check" name="Gender" id="Female" autocomplete="off">
+        <input type="radio" class="btn-check" name="gender" id="Female" autocomplete="off" value="FEMALE">
         <label class="btn btn-outline-primary text-black" for="Female">Female</label>
     </div>
 
 <!--        name later-->
     <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" id="weight" placeholder="Weight">
+        <input type="text" class="form-control" name="weight" id="weight" placeholder="Weight">
         <label for="weight">Weight</label>
     </div>
     <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" id="body-fat" placeholder="Body-fat">
-        <label for="body-fat">Body-fat</label>
+        <input type="text" class="form-control" name="bodyfat" id="bodyfat" placeholder="Body-fat">
+        <label for="bodyfat">Body-fat</label>
     </div>
     <div class="form-floating mb-sm-2">
         <input type="text" class="form-control" id="age" placeholder="Age">
@@ -65,42 +75,18 @@
 
 
     <div class="dropdown">
-        <button class="btn btn-outline-primary dropdown-toggle text-black mb-sm-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Activity Level
-        </button>
-<!--        <ul class="dropdown-menu">-->
-<!--            <li><a class="dropdown-item" href="#">Very Low</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">Low</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">Moderate</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">High</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">Very High</a></li>-->
-<!--        </ul>-->
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="veryLow" checked>
-                <label class="form-check-label" for="veryLow">Very Low</label>
-            </a></li>
-            <li><a class="dropdown-item" href="#">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="low" checked>
-                <label class="form-check-label" for="low">Low</label>
-            </a></li>
-            <li><a class="dropdown-item" href="#">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="moderate" checked>
-                <label class="form-check-label" for="moderate">Moderate</label>
-            </a></li>
-            <li><a class="dropdown-item" href="#">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="high" checked>
-                <label class="form-check-label" for="high">High</label>
-            </a></li>
-            <li><a class="dropdown-item" href="#">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="veryHigh" checked>
-                <label class="form-check-label" for="veryHigh">Very High</label>
-            </a></li>
-        </ul>
-        <form method="post" th:action="@{/submit-form}">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            <option selected>Activity Level</option>
+            <option value="VERY_LOW">Very Low</option>
+            <option value="LOW">Low</option>
+            <option value="MODERATE">Moderate</option>
+            <option value="HIGH">High</option>
+            <option value="VERY_HIGH">Very High</option>
+        </select>
         <a href="mealPlan.html">
             <input class="btn btn-primary" type="submit" value="Calculate">
         </a>
-        </form>
+
+    </div></form>
 </body>
 </html>

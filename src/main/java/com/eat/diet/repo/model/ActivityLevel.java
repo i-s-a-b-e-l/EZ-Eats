@@ -1,5 +1,5 @@
 package com.eat.diet.repo.model;
 
 public enum ActivityLevel {
-    VERYLOW, LOW, MODERATE, HIGH, VERYHIGH
+    VERY_LOW, LOW, MODERATE, HIGH, VERY_HIGH
 }

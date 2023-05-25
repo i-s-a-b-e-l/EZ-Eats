@@ -49,7 +49,7 @@ public class DietService {
         }
 
         // get cal amt based on activity lvl
-        if (person.getActivityLevel() == ActivityLevel.VERYLOW) {
+        if (person.getActivityLevel() == ActivityLevel.VERY_LOW) {
             totalCalories = (int)(bmr * 1.3);
         } else if (person.getActivityLevel() == ActivityLevel.LOW) {
             totalCalories = (int)(bmr * 1.55);

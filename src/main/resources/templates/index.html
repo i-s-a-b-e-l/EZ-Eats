@@ -10,83 +10,82 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script th:inline="javascript">
-        /*<![CDATA[*/
-        // JavaScript code to check for the presence of the message attribute and display an alert
-        var incomplete = /*[[${message}]]*/ null;
-        if (incomplete) {
-            alert(message);
-        }
-        /*]]>*/
+    <script>
+        document.getElementById("calc").addEventListener("click", function() {
+            var message = "The form is incomplete. Please complete the form before trying to generate the meal plan.";
+
+            // check radios
+            var radios = document.querySelector('input[type="radio"]');
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i]) {
+                    alert(message);
+                    break;
+                }
+            }
+
+            // check txt
+            var txts = document.querySelector('input[type="number"]');
+            for (var i = 0; i < txts.length; i++) {
+                if (txts[i]) {
+                    alert(message);
+                    break;
+                }
+            }
+            // check dropdown
+            var dropdown = document.getElementById("activitylevel").value;
+            if (dropdown === "") {
+                alert(message);
+            }
+        });
     </script>
     <h1 id="Title">EZ Eats</h1>
-    <h2 id="Subtitle">A personalized diet builder</h2>        <form method="post" th:action="@{/diet}">
+    <h2 id="Subtitle">A personalized diet builder</h2>
+    <form th:action="@{/diet}" th:object="${Person}" method="post">
+        <div class="container-flex mx-5">
+            <div class="btn-group d-flex mb-sm-2" role="group">
+                <section th:each="pref : ${T(com.eat.diet.repo.model.Pref).values}">
+                    <input type="radio" class="btn-check" name="pref" id="pref" autocomplete="off" th:field="*{pref}" th:value="${pref}">
+                    <label class="btn btn-outline-primary text-black" for="pref" th:text="${pref.displayValue}"></label>
+                </section>
+            </div>
 
-    <div class="container-flex mx-5">
-    <div class="btn-group d-flex mb-sm-2" role="group">
-        <input type="radio" class="btn-check" name="pref" id="Anything" autocomplete="off">
-        <label class="btn btn-outline-primary text-black" for="Anything">Anything</label>
+            <div class="btn-group d-flex mb-sm-2">
+                <section th:each="goal : ${T(com.eat.diet.repo.model.Goal).values}">
+                    <input type="radio" class="btn-check" name="goal" id="goal" autocomplete="off" th:field="*{goal}" th:value="${goal}">
+                    <label class="btn btn-outline-primary text-black" for="goal" th:text="${goal.displayValue}"></label>
+                </section>
+            </div>
 
-        <input type="radio" class="btn-check" name="pref" id="Vegetarian" autocomplete="off" value="VEGETARIAN">
-        <label class="btn btn-outline-primary text-black" for="Vegetarian">Vegetarian</label>
-
-        <input type="radio" class="btn-check" name="pref" id="Vegan" autocomplete="off" value="VEGAN">
-        <label class="btn btn-outline-primary text-black" for="Vegan">Vegan</label>
-
-        <input type="radio" class="btn-check" name="pref" id="Paleo" autocomplete="off" value="PALEO">
-        <label class="btn btn-outline-primary text-black" for="Paleo">Paleo</label>
-
-        <input type="radio" class="btn-check" name="pref" id="Keto" autocomplete="off" value="KETO">
-        <label class="btn btn-outline-primary text-black" for="Keto">Keto</label>
-    </div>
-
-    <div class="btn-group d-flex mb-sm-2">
-        <input type="radio" class="btn-check" name="goal" id="Lose" autocomplete="off" value="LOSE">
-        <label class="btn btn-outline-primary text-black" for="Lose">Lose Weight</label>
-
-        <input type="radio" class="btn-check" name="goal" id="Maintain" autocomplete="off" value="MAINTAIN">
-        <label class="btn btn-outline-primary text-black" for="Maintain">Maintain Weight</label>
-
-        <input type="radio" class="btn-check" name="goal" id="Gain" autocomplete="off" value="GAIN">
-        <label class="btn btn-outline-primary text-black" for="Gain">Gain Weight</label>
-    </div>
-
-    <div class="btn-group d-flex mb-sm-2" role="group">
-        <input type="radio" class="btn-check" name="gender" id="Male" autocomplete="off" value="MALE">
-        <label class="btn btn-outline-primary text-black" for="Male">Male</label>
-
-        <input type="radio" class="btn-check" name="gender" id="Female" autocomplete="off" value="FEMALE">
-        <label class="btn btn-outline-primary text-black" for="Female">Female</label>
-    </div>
+            <div class="btn-group d-flex mb-sm-2" role="group">
+                <section th:each="gender : ${T(com.eat.diet.repo.model.Gender).values}">
+                <input type="radio" class="btn-check" name="gender" id="gender" autocomplete="off" th:field="*{gender}" th:value="${gender}">
+                <label class="btn btn-outline-primary text-black" for="gender" th:text="${gender.displayValue}"></label>
+                </section>
+            </div>
 
 <!--        name later-->
-    <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" name="weight" id="weight" placeholder="Weight">
-        <label for="weight">Weight</label>
-    </div>
-    <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" name="bodyfat" id="bodyfat" placeholder="Body-fat">
-        <label for="bodyfat">Body-fat</label>
-    </div>
-    <div class="form-floating mb-sm-2">
-        <input type="text" class="form-control" id="age" placeholder="Age">
-        <label for="age">Age</label>
-    </div>
+            <div class="form-floating mb-sm-2">
+                <input type="number" class="form-control" th:field="*{weight}" id="weight" placeholder="Weight">
+                <label for="weight">Weight</label>
+            </div>
+            <div class="form-floating mb-sm-2">
+                <input type="number" class="form-control" th:field="*{bodyFat}" id="bodyFat" placeholder="Body-fat">
+                <label for="bodyFat">Body-fat</label>
+            </div>
+            <div class="form-floating mb-sm-2">
+                <input type="number" class="form-control" name="age" id="age" placeholder="Age">
+                <label for="age">Age</label>
+            </div>
 
-
-    <div class="dropdown">
-        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-            <option selected>Activity Level</option>
-            <option value="VERY_LOW">Very Low</option>
-            <option value="LOW">Low</option>
-            <option value="MODERATE">Moderate</option>
-            <option value="HIGH">High</option>
-            <option value="VERY_HIGH">Very High</option>
-        </select>
-        <a href="mealPlan.html">
-            <input class="btn btn-primary" type="submit" value="Calculate">
-        </a>
-
-    </div></form>
+            <div class="dropdown">
+                <select class="form-select" id="activityLevel" aria-label="Floating label select example" th:field="*{activityLevel}">
+                    <option selected value="null">Activity Level</option>
+                    <option th:each="lvl : ${T(com.eat.diet.repo.model.ActivityLevel).values()}"
+                            th:value="${lvl}" th:text="${lvl.displayValue}"></option>
+                </select>
+                <input class="btn btn-primary" id="calc" type="submit" value="Calculate">
+            </div>
+        </div>
+    </form>
 </body>
 </html>

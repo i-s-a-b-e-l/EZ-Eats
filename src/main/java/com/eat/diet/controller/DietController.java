@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +27,7 @@ public class DietController {
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
+        model.addAttribute("Person", new Person());
         return "index";
     }
 
@@ -36,19 +38,22 @@ public class DietController {
         return "index";
     }
 
-    @PostMapping("/plan")
-    public String diet(@ModelAttribute("formData") FormDataDTO formData, Model model) {
-        if (formData.getWeight() != 0 || formData.getGender() != null || formData.getActivityLevel() != null || formData.getBodyFat() != 0 || formData.getPref() != null || formData.getGoal() != null) {
-            model.addAttribute("message", "The form is incomplete. Cannot calculate necessary calories to plan meals.");
-        }
-        Person person = new Person(formData.getWeight(), formData.getGender(), formData.getActivityLevel(), formData.getBodyFat(), formData.getPref(), formData.getGoal());
+    @GetMapping("mealPlan")
+    public String mealPlan() {
+        return "mealPlan";
+    }
+
+
+    @PostMapping("/diet")
+    public String diet(@ModelAttribute Person person, BindingResult bindingResult, Model model) {
+        //Person person = new Person(formData.getWeight(), formData.getGender(), formData.getActivityLevel(), formData.getBodyFat(), formData.getPref(), formData.getGoal());
         int cal = dietService.calc(person);
         List<Map<String, String>> breakfast = dietService.pickMeal("breakfast", cal);
         List<Map<String, String>> lunch = dietService.pickMeal("lunch", cal);
         List<Map<String, String>> dinner = dietService.pickMeal("dinner", cal);
-        model.addAttribute("breakfastList", breakfast);
-
+        //model.addAttribute("breakfastList", breakfast);
+        model.addAttribute("Person", person);
         //TODO @Zoey: render the above in the html page
-        return "mealPlan";
+        return "index";
     }
 }

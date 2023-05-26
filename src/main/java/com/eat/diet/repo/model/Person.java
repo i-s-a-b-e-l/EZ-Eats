@@ -13,7 +13,9 @@ public class Person {
     private Pref pref; //Vegetarian, Vegan, or Non-vegetarian
     private Goal goal;
 
-    public Person( int weight, Gender gender, ActivityLevel activityLevel, int bodyFat, Pref pref, Goal goal){
+    public Person(){}
+
+    public Person(int weight, Gender gender, ActivityLevel activityLevel, int bodyFat, Pref pref, Goal goal){
 
         this.weight = weight;
         this.gender = gender;

@@ -118,10 +118,10 @@ public class DietService {
 
         // testing
         log.info("foods size {}",foods.size());
-        log.info("foods first item size {}",foods.get(0).size());
-        log.info("foods first item list {}",foods.get(0));
-        log.info("foods ten item size {}",foods.get(10).size());
-        log.info("foods ten item list {}",foods.get(10));
+//        log.info("foods first item size {}",foods.get(0).size());
+//        log.info("foods first item list {}",foods.get(0));
+//        log.info("foods ten item size {}",foods.get(10).size());
+//        log.info("foods ten item list {}",foods.get(10));
 
         return foods;
     }

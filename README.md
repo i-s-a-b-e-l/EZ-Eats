@@ -7,8 +7,8 @@
 
 - Built With
 - Classes
-- Creators
-- Add other stuff
+
+- other stuff
 
 ## Built With
 
@@ -23,7 +23,15 @@
 This class creates an object containing the characteristics of a food.
 
 ### Person
-This class creates an object containing information about an individual including weight, gender, activity level, body fat percentage, and food preferences.
+This class creates an object containing information about an individual including:
+
+- _int_ weight
+- _enum_ Gender (Female/Male)
+- _enum_ ActivityLevel (Very Low, Low, Moderate, High, Very High)
+- _int_ bodyFat percentage
+- _enum_ Pref (Vegetarian, Vegan, Paleo, Keto)
+- _enum_ Goal (Lose Weight, Maintain Weight, Gain Weight)
+
 
 ### Diet Service
 
@@ -49,6 +57,15 @@ This class provides services required for creating a healthy meal plan
   
     - This method returns the sum of all calories in foodList
   - _public List<Map<String, String>> pickMeal(String meal, int totalCalories){}_
+
+    - This method creates a plan consisting of two meals with additional information
+  - _public List<Food> addSameFoodsUntilCalories(List<Food> foodList, int caloriesPerMeal)_
+
+    - This method adds the same meals in the original plan to an _ArrayList_ until the calorie requirement is met
+  - _public static Map<Food, Long> countServings(List<Food> foods)_
+  
+    - This methods counts how many times meals are repeated using the _ArrayList_ from the _addSameFoodsUntilCalories_ method and returns a _Map<Food, Long>_ of servings for each meal.
+
   
 
 

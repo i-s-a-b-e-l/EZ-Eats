@@ -43,9 +43,9 @@
     <form th:action="@{/diet}" th:object="${Person}" method="post">
         <div class="container-flex mx-5">
             <div class="btn-group d-flex mb-sm-2" role="group">
-                <section th:each="pref : ${T(com.eat.diet.repo.model.Pref).values}">
-                    <input type="radio" class="btn-check" name="pref" id="pref" autocomplete="off" th:field="*{pref}" th:value="${pref}">
-                    <label class="btn btn-outline-primary text-black" for="pref" th:text="${pref.displayValue}"></label>
+                <section th:each="pref, iterStat : ${T(com.eat.diet.repo.model.Pref).values}">
+                    <input type="radio" class="btn-check" name="pref" id="${iterStat.index}" autocomplete="off" th:field="*{pref}" th:value="${pref}">
+                    <label class="btn btn-outline-primary text-black" for="${iterStat.index}" th:text="${pref.displayValue}"></label>
                 </section>
             </div>
 

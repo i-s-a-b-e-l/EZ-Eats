@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -50,22 +51,21 @@ public class DietService {
 
         // get cal amt based on activity lvl
         if (person.getActivityLevel() == ActivityLevel.VERY_LOW) {
-            totalCalories = (int)(bmr * 1.3);
+            totalCalories = (int) (bmr * 1.3);
         } else if (person.getActivityLevel() == ActivityLevel.LOW) {
-            totalCalories = (int)(bmr * 1.55);
+            totalCalories = (int) (bmr * 1.55);
         } else if (person.getActivityLevel() == ActivityLevel.MODERATE) {
-            totalCalories = (int)(bmr * 1.65);
+            totalCalories = (int) (bmr * 1.65);
         } else if (person.getActivityLevel() == ActivityLevel.HIGH) {
-            totalCalories = (int)(bmr * 1.8);
+            totalCalories = (int) (bmr * 1.8);
         } else {
-            totalCalories = (int)(bmr * 2.0);
+            totalCalories = (int) (bmr * 2.0);
         }
 
         // adjust cal amt based on goal
         if (person.getGoal() == Goal.GAIN) {
             totalCalories += 400;
-        }
-        else if (person.getGoal() == Goal.LOSE) {
+        } else if (person.getGoal() == Goal.LOSE) {
             totalCalories -= 500;
         }
         return totalCalories;
@@ -77,7 +77,7 @@ public class DietService {
      * @param meal - which meal to plan for
      * @return - list of combinations of foods whose sum is less than the calorie count
      */
-    public List<List<Food>> planMeal (String meal, int totalCalories) {
+    public List<List<Food>> planMeal(String meal, int totalCalories) {
         List<List<Food>> foods = new ArrayList<>();
         int perMeal = totalCalories / 3;
 
@@ -86,11 +86,9 @@ public class DietService {
             List<Food> allMealsLessThanCalories;
             if (meal.equals("breakfast")) {
                 allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(perMeal);
-            }
-            else if (meal.equals("lunch")) {
+            } else if (meal.equals("lunch")) {
                 allMealsLessThanCalories = foodRepository.findAllLunchLessThanCalories(perMeal);
-            }
-            else {
+            } else {
                 allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCalories(perMeal);
             }
 
@@ -117,7 +115,7 @@ public class DietService {
         }
 
         // testing
-        log.info("foods size {}",foods.size());
+        log.info("foods size {}", foods.size());
 //        log.info("foods first item size {}",foods.get(0).size());
 //        log.info("foods first item list {}",foods.get(0));
 //        log.info("foods ten item size {}",foods.get(10).size());
@@ -155,7 +153,7 @@ public class DietService {
     /**
      * keeps adding foods to the <foodList> until <caloriesPerMeal> is reached
      *
-     * @param foodList - list of foods
+     * @param foodList        - list of foods
      * @param caloriesPerMeal - add foods to each meal based on calories per meal
      * @return - a new list of foods
      */
@@ -168,8 +166,19 @@ public class DietService {
         return responseList;
     }
 
+    public List<Food> addSameFoodsUntilCalories(List<Food> foodList, int caloriesPerMeal) {
+        List<Food> responseList = new ArrayList<>();
+        responseList.addAll(foodList);
+
+        while (sumOfFoodsCalories(responseList) < caloriesPerMeal) {
+            responseList.add(foodList.get((int) (Math.random() * foodList.size())));
+        }
+        return responseList;
+    }
+
     /**
      * returns the total calories of all foods in <foodList>
+     *
      * @param foodList - list of foods
      * @return int sum of foods
      */
@@ -189,11 +198,11 @@ public class DietService {
         for (int i = 0; i < lists.size(); i++) {
             lists.set(i, addFoodsUntilCalories(lists.get(i), totalCalories / 3));
         }
-        int index = (int)(Math.random() * lists.size());
+        int index = (int) (Math.random() * lists.size());
         List<Food> choice = lists.get(index);
         while (choice.size() > 2) {
             choice = lists.get(index);
-            index = (int)(Math.random() * lists.size());
+            index = (int) (Math.random() * lists.size());
         }
 
         List<Map<String, String>> plan = new ArrayList<>();
@@ -209,5 +218,9 @@ public class DietService {
             plan.get(i).put("keto", String.valueOf(choice.get(i).isKeto()));
         }
         return plan;
+    }
+
+    public static Map<Food, Long> countServings(List<Food> foods) {
+        return foods.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }

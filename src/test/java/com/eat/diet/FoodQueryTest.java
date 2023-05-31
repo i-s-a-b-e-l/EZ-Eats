@@ -12,6 +12,8 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Slf4j
 @SpringBootTest
@@ -56,8 +58,9 @@ public class FoodQueryTest {
         List<List<Food>> lists = dietService.planMeal("breakfast", cal);
 
         lists.forEach(l -> {
-            List<Food> foods = dietService.addFoodsUntilCalories(l, 333);
-            foods.forEach(l1 -> System.out.println(l1.getName() + ": " + l1.getCalories()) );
+            List<Food> foods = dietService.addSameFoodsUntilCalories(l, 1000);
+            Map<Food, Long> servingCounts = dietService.countServings(foods);
+            servingCounts.entrySet().forEach(r1 -> System.out.println("Item: "+ r1.getKey().getName()  + " ,Calories:" + r1.getKey().getCalories() +" ,Servings :" + r1.getValue()));
             System.out.println("-----------------");
         });
 

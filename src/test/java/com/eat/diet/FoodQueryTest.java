@@ -60,7 +60,7 @@ public class FoodQueryTest {
         lists.forEach(l -> {
             List<Food> foods = dietService.addSameFoodsUntilCalories(l, 1000);
             Map<Food, Long> servingCounts = dietService.countServings(foods);
-            servingCounts.entrySet().forEach(r1 -> System.out.println("Item: "+ r1.getKey().getName()  + " ,Calories:" + r1.getKey().getCalories() +" ,Servings :" + r1.getValue()));
+            servingCounts.entrySet().forEach(r1 -> System.out.println("Item: " + r1.getKey().getName()  + ", Calories:" + r1.getKey().getCalories() +", Servings :" + r1.getValue()));
             System.out.println("-----------------");
         });
 
@@ -74,17 +74,14 @@ public class FoodQueryTest {
 
         int cal = dietService.calc(new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.NONE, Goal.GAIN));
         System.out.println("calories: " + cal);
-        List<Map<String, String>> breakfast = dietService.pickMeal("lunch", cal);
+        List<Map<Food, Long>> breakfast = dietService.pickMeal("lunch", cal);
+        System.out.println("breakfast size: " + breakfast.size());
 
-        breakfast.forEach(print -> {
-            System.out.println("{\nname: " + print.get("name"));
-            System.out.println("cal: " + print.get("calories"));
-            System.out.println("vegetarian: " + print.get("vegetarian"));
-            System.out.println("vegan: " + print.get("vegan"));
-            System.out.println("paleo: " + print.get("paleo"));
-            System.out.println("keto: " + print.get("keto") + "\n}");
-        });
-
+        breakfast.get(0).entrySet().forEach(item -> {
+                System.out.println("name: " + item.getKey().getName());
+                System.out.println("calories: " + item.getKey().getCalories());
+                System.out.println("servings: " + item.getValue());
+            });
         log.info("Test Complete");
     }
 }

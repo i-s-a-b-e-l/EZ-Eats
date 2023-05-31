@@ -6,12 +6,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,11 @@ import java.util.Map;
 @Controller
 @Slf4j
 public class DietController {
+
+    List<Map<Food, Long>> breakfast;
+    List<Map<Food, Long>> lunch;
+    List<Map<Food, Long>> dinner;
+
     @Autowired
     private DietService dietService;
     @Value("${spring.application.name}")
@@ -38,22 +45,23 @@ public class DietController {
         return "index";
     }
 
-    @GetMapping("mealPlan")
-    public String mealPlan() {
+    @GetMapping("/mealPlan")
+    public String mealPlan(Model model) {
+        model.addAttribute("breakfast", breakfast.get(0));
+        model.addAttribute("lunch", lunch.get(0));
+        model.addAttribute("dinner", dinner.get(0));
         return "mealPlan";
     }
 
 
     @PostMapping("/diet")
     public String diet(@ModelAttribute Person person, BindingResult bindingResult, Model model) {
-        //Person person = new Person(formData.getWeight(), formData.getGender(), formData.getActivityLevel(), formData.getBodyFat(), formData.getPref(), formData.getGoal());
+
+        // get data
         int cal = dietService.calc(person);
-        List<Map<String, String>> breakfast = dietService.pickMeal("breakfast", cal);
-        List<Map<String, String>> lunch = dietService.pickMeal("lunch", cal);
-        List<Map<String, String>> dinner = dietService.pickMeal("dinner", cal);
-        //model.addAttribute("breakfastList", breakfast);
-        model.addAttribute("Person", person);
-        //TODO @Zoey: render the above in the html page
-        return "index";
+        breakfast = dietService.pickMeal("breakfast", cal);
+        lunch = dietService.pickMeal("lunch", cal);
+        dinner = dietService.pickMeal("dinner", cal);
+        return "redirect:/mealPlan";
     }
 }

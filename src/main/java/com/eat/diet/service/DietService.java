@@ -193,29 +193,16 @@ public class DietService {
      * @param meal - which type of food to pick
      * @return - randomly picked food combo of size 2
      */
-    public List<Map<String, String>> pickMeal(String meal, int totalCalories) {
+    public List<Map<Food, Long>> pickMeal(String meal, int totalCalories) {
         List<List<Food>> lists = planMeal(meal, totalCalories);
         for (int i = 0; i < lists.size(); i++) {
-            lists.set(i, addFoodsUntilCalories(lists.get(i), totalCalories / 3));
+            lists.set(i, addSameFoodsUntilCalories(lists.get(i), totalCalories / 3));
         }
         int index = (int) (Math.random() * lists.size());
         List<Food> choice = lists.get(index);
-        while (choice.size() > 2) {
-            choice = lists.get(index);
-            index = (int) (Math.random() * lists.size());
-        }
-
-        List<Map<String, String>> plan = new ArrayList<>();
+        List<Map<Food, Long>> plan = new ArrayList<>();
         for (int i = 0; i < choice.size(); i++) {
-            plan.add(i, new HashMap<String, String>());
-        }
-        for (int i = 0; i < choice.size(); i++) {
-            plan.get(i).put("name", choice.get(i).getName());
-            plan.get(i).put("calories", String.valueOf(choice.get(i).getCalories()));
-            plan.get(i).put("vegetarian", String.valueOf(choice.get(i).isVegetarian()));
-            plan.get(i).put("vegan", String.valueOf(choice.get(i).isVegan()));
-            plan.get(i).put("paleo", String.valueOf(choice.get(i).isPaleo()));
-            plan.get(i).put("keto", String.valueOf(choice.get(i).isKeto()));
+            plan.add(i, countServings(choice));
         }
         return plan;
     }

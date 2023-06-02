@@ -77,35 +77,66 @@ public class DietService {
      * @param meal - which meal to plan for
      * @return - list of combinations of foods whose sum is less than the calorie count
      */
-    public List<List<Food>> planMeal(String meal, int totalCalories) {
+    public List<List<Food>> planMeal(String meal, int totalCalories, Pref pref) {
         List<List<Food>> foods = new ArrayList<>();
         int perMeal = totalCalories / 3;
 
         try {
             //Retrieve all foods less than <calories>
             List<Food> allMealsLessThanCalories;
-            if (meal.equals("breakfast")) {
-                allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(perMeal);
-            } else if (meal.equals("lunch")) {
-                allMealsLessThanCalories = foodRepository.findAllLunchLessThanCalories(perMeal);
-            } else {
-                allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCalories(perMeal);
+            if(pref == Pref.NONE) {
+                if (meal.equals("breakfast")) {
+                    allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCalories(perMeal);
+                } else if (meal.equals("lunch")) {
+                    allMealsLessThanCalories = foodRepository.findAllLunchLessThanCalories(perMeal);
+                } else {
+                    allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCalories(perMeal);
+                }
+
+
+                // Filter all foods to be combination less than calories.
+                for (Food f1 : allMealsLessThanCalories) {
+                    //List returns all foods whose sum with f1.calories <= calories
+                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
+                            .stream()
+                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
+                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
+                            .collect(Collectors.toList());
+
+                    comboFoodsLessThanCalories.stream().forEach(f -> {
+                                foods.add(List.of(f, f1));
+                            }
+
+                    );
+                }
             }
 
-            // Filter all foods to be combination less than calories.
-            for (Food f1 : allMealsLessThanCalories) {
-                //List returns all foods whose sum with f1.calories <= calories
-                List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                        .stream()
-                        .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                        .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                        .collect(Collectors.toList());
+            else if(pref == Pref.VEGAN){
 
-                comboFoodsLessThanCalories.stream().forEach(f -> {
-                            foods.add(List.of(f, f1));
-                        }
+                //Retrieve all foods less than <calories> and is VEGAN
+                if (meal.equals("breakfast")) {
+                    allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCaloriesAndIsVegan(perMeal);
+                } else if (meal.equals("lunch")) {
+                    allMealsLessThanCalories = foodRepository.findAllLunchLessThanCaloriesAndIsVegan(perMeal);
+                } else {
+                    allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCaloriesAndIsVegan(perMeal);
+                }
 
-                );
+                // Filter all foods to be combination less than calories given VEGAN pref.
+                for (Food f1 : allMealsLessThanCalories) {
+                    //List returns all foods whose sum with f1.calories <= calories
+                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
+                            .stream()
+                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
+                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
+                            .collect(Collectors.toList());
+
+                    comboFoodsLessThanCalories.stream().forEach(f -> {
+                                foods.add(List.of(f, f1));
+                            }
+
+                    );
+                }
             }
 
 
@@ -193,8 +224,8 @@ public class DietService {
      * @param meal - which type of food to pick
      * @return - randomly picked food combo of size 2
      */
-    public List<Map<Food, Long>> pickMeal(String meal, int totalCalories) {
-        List<List<Food>> lists = planMeal(meal, totalCalories);
+    public List<Map<Food, Long>> pickMeal(String meal, int totalCalories, Pref pref) {
+        List<List<Food>> lists = planMeal(meal, totalCalories, pref);
         for (int i = 0; i < lists.size(); i++) {
             lists.set(i, addSameFoodsUntilCalories(lists.get(i), totalCalories / 3));
         }

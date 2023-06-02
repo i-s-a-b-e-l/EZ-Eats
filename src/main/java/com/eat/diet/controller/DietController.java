@@ -34,7 +34,7 @@ public class DietController {
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
-        model.addAttribute("Person", new Person());
+        model.addAttribute("person", new Person());
         return "index";
     }
 
@@ -56,8 +56,6 @@ public class DietController {
 
     @PostMapping("/diet")
     public String diet(@ModelAttribute Person person, BindingResult bindingResult, Model model) {
-
-        // get data
         int cal = dietService.calc(person);
         Pref pref = person.getPref();
         breakfast = dietService.pickMeal("breakfast", cal, pref);

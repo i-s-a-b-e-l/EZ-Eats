@@ -40,7 +40,7 @@
     </script>
     <h1 id="Title">EZ Eats</h1>
     <h2 id="Subtitle">A personalized diet builder</h2>
-    <form th:action="@{/diet}" th:object="${Person}" method="post">
+    <form th:action="@{/diet}" th:object="${person}" method="post">
         <div class="container-flex mx-5">
             <div class="btn-group d-flex mb-sm-2" role="group">
                 <section th:each="pref, iterStat : ${T(com.eat.diet.repo.model.Pref).values}">
@@ -63,7 +63,6 @@
                 </section>
             </div>
 
-<!--        name later-->
             <div class="form-floating mb-sm-2">
                 <input type="number" class="form-control" th:field="*{weight}" id="weight" placeholder="Weight">
                 <label for="weight">Weight</label>

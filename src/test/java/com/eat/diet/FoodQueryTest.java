@@ -54,8 +54,10 @@ public class FoodQueryTest {
 
         Assert.notNull(dietService, "DietService not found");
 
-        int cal = dietService.calc(new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.NONE, Goal.GAIN));
-        List<List<Food>> lists = dietService.planMeal("breakfast", cal);
+        Person person = new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.VEGAN, Goal.GAIN);
+        int cal = dietService.calc(person);
+        Pref pref = person.getPref();
+        List<List<Food>> lists = dietService.planMeal("breakfast", cal, pref );
 
         lists.forEach(l -> {
             List<Food> foods = dietService.addSameFoodsUntilCalories(l, 1000);
@@ -74,7 +76,7 @@ public class FoodQueryTest {
 
         int cal = dietService.calc(new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.NONE, Goal.GAIN));
         System.out.println("calories: " + cal);
-        List<Map<Food, Long>> breakfast = dietService.pickMeal("lunch", cal);
+        List<Map<Food, Long>> breakfast = dietService.pickMeal("lunch", cal, Pref.VEGAN);
         System.out.println("breakfast size: " + breakfast.size());
 
         breakfast.get(0).entrySet().forEach(item -> {

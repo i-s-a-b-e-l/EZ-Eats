@@ -57,9 +57,10 @@ public class DietController {
     @PostMapping("/diet")
     public String diet(@ModelAttribute Person person, BindingResult bindingResult, Model model) {
         int cal = dietService.calc(person);
-        breakfast = dietService.pickMeal("breakfast", cal);
-        lunch = dietService.pickMeal("lunch", cal);
-        dinner = dietService.pickMeal("dinner", cal);
+        Pref pref = person.getPref();
+        breakfast = dietService.pickMeal("breakfast", cal, pref);
+        lunch = dietService.pickMeal("lunch", cal, pref);
+        dinner = dietService.pickMeal("dinner", cal, pref);
         return "redirect:/mealPlan";
     }
 }

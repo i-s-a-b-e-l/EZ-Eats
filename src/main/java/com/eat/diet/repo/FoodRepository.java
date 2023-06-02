@@ -45,5 +45,30 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{type:'breakfast'}, {keto: true}")
     List<Food> findAllBreakfastLessThanCaloriesAndIsKeto(int calories);
 
+    @Query("{type:'lunch'}, {vegetarian: true}")
+    List<Food> findAllLunchLessThanCaloriesAndIsVegetarian(int calories);
+
+    @Query("{type:'lunch'}, {vegan: true}")
+    List<Food> findAllLunchLessThanCaloriesAndIsVegan(int calories);
+
+    @Query("{type:'lunch'}, {paleo: true}")
+    List<Food> findAllLunchLessThanCaloriesAndIsPaleo(int calories);
+
+    @Query("{type:'lunch'}, {keto: true}")
+    List<Food> findAllLunchLessThanCaloriesAndIsKeto(int calories);
+
+
+    @Query("{type:'dinner'}, {vegetarian: true}")
+    List<Food> findAllDinnerLessThanCaloriesAndIsVegetarian(int calories);
+
+    @Query("{type:'dinner'}, {vegan: true}")
+    List<Food> findAllDinnerLessThanCaloriesAndIsVegan(int calories);
+
+    @Query("{type:'dinner'}, {paleo: true}")
+    List<Food> findAllDinnerLessThanCaloriesAndIsPaleo(int calories);
+
+    @Query("{type:'dinner'}, {keto: true}")
+    List<Food> findAllDinnerLessThanCaloriesAndIsKeto(int calories);
+
 
 }

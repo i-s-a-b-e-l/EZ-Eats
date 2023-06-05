@@ -52,29 +52,41 @@
             }
         });
     </script>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <!--navbar-->
+    <nav class="navbar navbar-nav" style="background-color: #37d370;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">EZ Eats</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="howItWorks.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">About Us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <h1 class="text-center fs-2">EZ Eats</h1>
-    <h2 class="text-center fs-4">A personalized diet builder</h2>
+    <!--title-->
+    <h1 class="text-center fs-2 mt-3" style = "Font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">EZ Eats</h1>
+
+    <!--description-->
+    <h2 class="text-center fs-4" style = "Font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">A personalized diet builder</h2>
+
+    <!--forms-->
     <form th:action="@{/diet}" th:object="${person}" method="post">
         <div class="container-flex mx-5 px-5">
+
+            <!--dropdown-->
             <div class="dropdown mb-sm-2">
                 <select class="form-select" id="pref" aria-label="Floating label select example" th:field="*{pref}">
                     <option selected value="null">Diet Preference</option>
@@ -83,6 +95,7 @@
                 </select>
             </div>
 
+            <!--dropdown-->
             <div class="dropdown mb-sm-2">
                 <select class="form-select" id="goal" aria-label="Floating label select example" th:field="*{goal}">
                     <option selected value="null">Weight Goal</option>
@@ -91,6 +104,7 @@
                 </select>
             </div>
 
+            <!--dropdown-->
             <div class="dropdown mb-sm-2">
                 <select class="form-select" id="gender" aria-label="Floating label select example" th:field="*{gender}">
                     <option selected value="null">Gender</option>
@@ -99,19 +113,25 @@
                 </select>
             </div>
 
+            <!--text input-->
             <div class="form-floating mb-sm-2">
                 <input type="number" class="form-control" th:field="*{weight}" id="weight" placeholder="Weight">
                 <label for="weight">Weight</label>
             </div>
+
+            <!--text input-->
             <div class="form-floating mb-sm-2">
                 <input type="number" class="form-control" th:field="*{bodyFat}" id="bodyFat" placeholder="Body-fat">
                 <label for="bodyFat">Body-fat</label>
             </div>
+
+            <!--text input-->
             <div class="form-floating mb-sm-2">
                 <input type="number" class="form-control" name="age" id="age" placeholder="Age">
                 <label for="age">Age</label>
             </div>
 
+            <!--dropdown-->
             <div class="dropdown mb-sm-2">
                 <select class="form-select" id="activityLevel" aria-label="Floating label select example" th:field="*{activityLevel}">
                     <option selected value="null">Activity Level</option>
@@ -120,9 +140,10 @@
                 </select>
             </div>
             <div class="mb-sm-2 text-center">
-                <input class="btn btn-primary" id="calc" type="submit" value="Calculate">
+                <input class="btn btn-primary" id="calc" type="submit" value="Calculate"  style="background-color: #19B550;">
             </div>
         </div>
     </form>
+    <!--Hi. I hate html now.-->
 </body>
 </html>

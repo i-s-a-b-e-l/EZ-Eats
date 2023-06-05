@@ -57,6 +57,7 @@ public class FoodQueryTest {
         Person person = new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.VEGAN, Goal.GAIN);
         int cal = dietService.calc(person);
         Pref pref = person.getPref();
+        System.out.println(pref);
         List<List<Food>> lists = dietService.planMeal("breakfast", cal, pref );
 
         lists.forEach(l -> {

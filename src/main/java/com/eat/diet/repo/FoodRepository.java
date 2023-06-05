@@ -33,41 +33,41 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{calories: { $lt: ?0 } }")
     List<Food> findAllFoodsLessThanCalories(int calories);
 
-    @Query("{type:'breakfast'}, {vegetarian: true}")
+    @Query("{type:'breakfast'}, {vegetarian: true}, calories: {$lt: ?0 }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsVegetarian(int calories);
 
-    @Query("{type:'breakfast'}, {vegan: true}")
+    @Query("{type:'breakfast'}, {vegan: true}, calories: {$lt: ?0 }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsVegan(int calories);
 
-    @Query("{type:'breakfast'}, {paleo: true}")
+    @Query("{type:'breakfast'}, {paleo: true}, calories: {$lt: ?0 }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsPaleo(int calories);
 
-    @Query("{type:'breakfast'}, {keto: true}")
+    @Query("{type:'breakfast'}, {keto: true}, calories: {$lt: ?0 }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsKeto(int calories);
 
-    @Query("{type:'lunch'}, {vegetarian: true}")
+    @Query("{type:'lunch'}, {vegetarian: true}, calories: {$lt: ?0 }")
     List<Food> findAllLunchLessThanCaloriesAndIsVegetarian(int calories);
 
-    @Query("{type:'lunch'}, {vegan: true}")
+    @Query("{type:'lunch'}, {vegan: true}, calories: {$lt: ?0 }")
     List<Food> findAllLunchLessThanCaloriesAndIsVegan(int calories);
 
-    @Query("{type:'lunch'}, {paleo: true}")
+    @Query("{type:'lunch'}, {paleo: true}, calories: {$lt: ?0 }")
     List<Food> findAllLunchLessThanCaloriesAndIsPaleo(int calories);
 
-    @Query("{type:'lunch'}, {keto: true}")
+    @Query("{type:'lunch'}, {keto: true}, calories: {$lt: ?0 }")
     List<Food> findAllLunchLessThanCaloriesAndIsKeto(int calories);
 
 
-    @Query("{type:'dinner'}, {vegetarian: true}")
+    @Query("{type:'dinner'}, {vegetarian: true}, calories: {$lt: ?0 }")
     List<Food> findAllDinnerLessThanCaloriesAndIsVegetarian(int calories);
 
-    @Query("{type:'dinner'}, {vegan: true}")
+    @Query("{type:'dinner'}, {vegan: true}, calories: {$lt: ?0 }")
     List<Food> findAllDinnerLessThanCaloriesAndIsVegan(int calories);
 
-    @Query("{type:'dinner'}, {paleo: true}")
+    @Query("{type:'dinner'}, {paleo: true}, calories: {$lt: ?0 }")
     List<Food> findAllDinnerLessThanCaloriesAndIsPaleo(int calories);
 
-    @Query("{type:'dinner'}, {keto: true}")
+    @Query("{type:'dinner'}, {keto: true}, calories: {$lt: ?0 }")
     List<Food> findAllDinnerLessThanCaloriesAndIsKeto(int calories);
 
 

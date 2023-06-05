@@ -54,17 +54,19 @@ public class FoodQueryTest {
 
         Assert.notNull(dietService, "DietService not found");
 
-        Person person = new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.VEGAN, Goal.GAIN);
+        Person person = new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.KETO, Goal.GAIN);
         int cal = dietService.calc(person);
         Pref pref = person.getPref();
         System.out.println(pref);
         List<List<Food>> lists = dietService.planMeal("breakfast", cal, pref );
+
 
         lists.forEach(l -> {
             List<Food> foods = dietService.addSameFoodsUntilCalories(l, 1000);
             Map<Food, Long> servingCounts = dietService.countServings(foods);
             servingCounts.entrySet().forEach(r1 -> System.out.println("Item: " + r1.getKey().getName()  + ", Calories:" + r1.getKey().getCalories() +", Servings :" + r1.getValue()));
             System.out.println("-----------------");
+
         });
 
 

@@ -14,14 +14,14 @@
         document.getElementById("calc").addEventListener("click", function() {
             var message = "The form is incomplete. Please complete the form before trying to generate the meal plan.";
 
-            // check radios
-            var radios = document.querySelector('input[type="radio"]');
-            for (var i = 0; i < radios.length; i++) {
-                if (radios[i]) {
-                    alert(message);
-                    break;
-                }
-            }
+            // // check radios
+            // var radios = document.querySelector('input[type="radio"]');
+            // for (var i = 0; i < radios.length; i++) {
+            //     if (radios[i]) {
+            //         alert(message);
+            //         break;
+            //     }
+            // }
 
             // check txt
             var txts = document.querySelector('input[type="number"]');
@@ -36,31 +36,67 @@
             if (dropdown === "") {
                 alert(message);
             }
+            var dropdown2 = document.getElementById("pref").value;
+            if (dropdown2 === "") {
+                alert(message);
+            }
+
+            var dropdown3 = document.getElementById("goal").value;
+            if (dropdown3 === "") {
+                alert(message);
+            }
+
+            var dropdown4 = document.getElementById("gender").value;
+            if (dropdown4 === "") {
+                alert(message);
+            }
         });
     </script>
-    <h1 id="Title">EZ Eats</h1>
-    <h2 id="Subtitle">A personalized diet builder</h2>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="text-center fs-2">EZ Eats</h1>
+    <h2 class="text-center fs-4">A personalized diet builder</h2>
     <form th:action="@{/diet}" th:object="${person}" method="post">
-        <div class="container-flex mx-5">
-            <div class="btn-group d-flex mb-sm-2" role="group">
-                <section th:each="pref, iterStat : ${T(com.eat.diet.repo.model.Pref).values}">
-                    <input type="radio" class="btn-check" name="pref" id="${iterStat.index}" autocomplete="off" th:field="*{pref}" th:value="${pref}">
-                    <label class="btn btn-outline-primary text-black" for="${iterStat.index}" th:text="${pref.displayValue}"></label>
-                </section>
+        <div class="container-flex mx-5 px-5">
+            <div class="dropdown mb-sm-2">
+                <select class="form-select" id="pref" aria-label="Floating label select example" th:field="*{pref}">
+                    <option selected value="null">Diet Preference</option>
+                    <option th:each="pref : ${T(com.eat.diet.repo.model.Pref).values()}"
+                            th:value="${pref}" th:text="${pref.displayValue}"></option>
+                </select>
             </div>
 
-            <div class="btn-group d-flex mb-sm-2">
-                <section th:each="goal : ${T(com.eat.diet.repo.model.Goal).values}">
-                    <input type="radio" class="btn-check" name="goal" id="goal" autocomplete="off" th:field="*{goal}" th:value="${goal}">
-                    <label class="btn btn-outline-primary text-black" for="goal" th:text="${goal.displayValue}"></label>
-                </section>
+            <div class="dropdown mb-sm-2">
+                <select class="form-select" id="goal" aria-label="Floating label select example" th:field="*{goal}">
+                    <option selected value="null">Weight Goal</option>
+                    <option th:each="goal : ${T(com.eat.diet.repo.model.Goal).values()}"
+                            th:value="${goal}" th:text="${goal.displayValue}"></option>
+                </select>
             </div>
 
-            <div class="btn-group d-flex mb-sm-2" role="group">
-                <section th:each="gender : ${T(com.eat.diet.repo.model.Gender).values}">
-                <input type="radio" class="btn-check" name="gender" id="gender" autocomplete="off" th:field="*{gender}" th:value="${gender}">
-                <label class="btn btn-outline-primary text-black" for="gender" th:text="${gender.displayValue}"></label>
-                </section>
+            <div class="dropdown mb-sm-2">
+                <select class="form-select" id="gender" aria-label="Floating label select example" th:field="*{gender}">
+                    <option selected value="null">Gender</option>
+                    <option th:each="gender : ${T(com.eat.diet.repo.model.Gender).values()}"
+                            th:value="${gender}" th:text="${gender.displayValue}"></option>
+                </select>
             </div>
 
             <div class="form-floating mb-sm-2">
@@ -76,12 +112,14 @@
                 <label for="age">Age</label>
             </div>
 
-            <div class="dropdown">
+            <div class="dropdown mb-sm-2">
                 <select class="form-select" id="activityLevel" aria-label="Floating label select example" th:field="*{activityLevel}">
                     <option selected value="null">Activity Level</option>
                     <option th:each="lvl : ${T(com.eat.diet.repo.model.ActivityLevel).values()}"
                             th:value="${lvl}" th:text="${lvl.displayValue}"></option>
                 </select>
+            </div>
+            <div class="mb-sm-2 text-center">
                 <input class="btn btn-primary" id="calc" type="submit" value="Calculate">
             </div>
         </div>

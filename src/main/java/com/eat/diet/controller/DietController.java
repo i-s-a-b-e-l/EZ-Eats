@@ -53,7 +53,6 @@ public class DietController {
         return "mealPlan";
     }
 
-
     @PostMapping("/diet")
     public String diet(@ModelAttribute Person person, BindingResult bindingResult, Model model) {
         int cal = dietService.calc(person);
@@ -62,5 +61,15 @@ public class DietController {
         lunch = dietService.pickMeal("lunch", cal, pref);
         dinner = dietService.pickMeal("dinner", cal, pref);
         return "redirect:/mealPlan";
+    }
+
+    @GetMapping("/about-us")
+    public String about() {
+        return "aboutUs";
+    }
+
+    @GetMapping("/how-it-works")
+    public String how() {
+        return "howItWorks";
     }
 }

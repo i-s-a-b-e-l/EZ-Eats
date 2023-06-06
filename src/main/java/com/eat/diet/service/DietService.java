@@ -92,25 +92,7 @@ public class DietService {
                 } else {
                     allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCalories(perMeal);
                 }
-
-
-                // Filter all foods to be combination less than calories.
-                for (Food f1 : allMealsLessThanCalories) {
-                    //List returns all foods whose sum with f1.calories <= calories
-                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                            .stream()
-                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                            .collect(Collectors.toList());
-
-                    comboFoodsLessThanCalories.stream().forEach(f -> {
-                                foods.add(List.of(f, f1));
-                            }
-
-                    );
-                }
             }
-
             else if(pref == Pref.VEGAN){
 
                 //Retrieve all foods less than <calories> and is VEGAN
@@ -121,24 +103,7 @@ public class DietService {
                 } else {
                     allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCaloriesAndIsVegan(perMeal);
                 }
-
-                // Filter all foods to be combination less than calories given VEGAN pref.
-                for (Food f1 : allMealsLessThanCalories) {
-                    //List returns all foods whose sum with f1.calories <= calories
-                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                            .stream()
-                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                            .collect(Collectors.toList());
-
-                    comboFoodsLessThanCalories.stream().forEach(f -> {
-                                foods.add(List.of(f, f1));
-                            }
-
-                    );
-                }
             }
-
             else if (pref == Pref.VEGETARIAN){
                 //Retrieve all foods less than <calories> and is VEGETARIAN
                 if (meal.equals("breakfast")) {
@@ -148,26 +113,8 @@ public class DietService {
                 } else {
                     allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCaloriesAndIsVegetarian(perMeal);
                 }
-
-                // Filter all foods to be combination less than calories given VEGETARIAN pref.
-                for (Food f1 : allMealsLessThanCalories) {
-                    //List returns all foods whose sum with f1.calories <= calories
-                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                            .stream()
-                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                            .collect(Collectors.toList());
-
-                    comboFoodsLessThanCalories.stream().forEach(f -> {
-                                foods.add(List.of(f, f1));
-                            }
-
-                    );
-                }
-
             }
-
-            else if(pref == Pref.PALEO){
+            else if(pref == Pref.PALEO) {
                 //Retrieve all foods less than <calories> and is PALEO
                 if (meal.equals("breakfast")) {
                     allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCaloriesAndIsPaleo(perMeal);
@@ -176,25 +123,8 @@ public class DietService {
                 } else {
                     allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCaloriesAndIsPaleo(perMeal);
                 }
-
-                // Filter all foods to be combination less than calories given PALEO pref.
-                for (Food f1 : allMealsLessThanCalories) {
-                    //List returns all foods whose sum with f1.calories <= calories
-                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                            .stream()
-                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                            .collect(Collectors.toList());
-
-                    comboFoodsLessThanCalories.stream().forEach(f -> {
-                                foods.add(List.of(f, f1));
-                            }
-
-                    );
-                }
             }
-
-            else if(pref == Pref.KETO){
+            else {
                 //Retrieve all foods less than <calories> and is KETO
                 if (meal.equals("breakfast")) {
                     allMealsLessThanCalories = foodRepository.findAllBreakfastLessThanCaloriesAndIsKeto(perMeal);
@@ -203,24 +133,23 @@ public class DietService {
                 } else {
                     allMealsLessThanCalories = foodRepository.findAllDinnerLessThanCaloriesAndIsKeto(perMeal);
                 }
-
-                // Filter all foods to be combination less than calories given KETO pref.
-                for (Food f1 : allMealsLessThanCalories) {
-                    //List returns all foods whose sum with f1.calories <= calories
-                    List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
-                            .stream()
-                            .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
-                            .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
-                            .collect(Collectors.toList());
-
-                    comboFoodsLessThanCalories.stream().forEach(f -> {
-                                foods.add(List.of(f, f1));
-                            }
-
-                    );
-                }
             }
 
+            // Filter all foods to be combination less than calories given KETO pref.
+            for (Food f1 : allMealsLessThanCalories) {
+                //List returns all foods whose sum with f1.calories <= calories
+                List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
+                        .stream()
+                        .filter(f2 -> !f2.getName().equals(f1.getName())) //Exclude the comparing food.
+                        .filter(f2 -> f1.getCalories() + f2.getCalories() <= totalCalories) // Find if sum is less than calories
+                        .collect(Collectors.toList());
+
+                comboFoodsLessThanCalories.stream().forEach(f -> {
+                            foods.add(List.of(f, f1));
+                        }
+
+                );
+            }
 
         } catch (Exception e) {
             log.info(e.getMessage(), e);

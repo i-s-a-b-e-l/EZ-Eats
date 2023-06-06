@@ -54,7 +54,7 @@ public class FoodQueryTest {
 
         Assert.notNull(dietService, "DietService not found");
 
-        Person person = new Person(200, Gender.MALE, ActivityLevel.HIGH, 10, Pref.KETO, Goal.GAIN);
+        Person person = new Person(300, Gender.MALE, ActivityLevel.HIGH, 10, Pref.VEGETARIAN, Goal.GAIN);
         int cal = dietService.calc(person);
         Pref pref = person.getPref();
         System.out.println(pref);

@@ -1,7 +1,7 @@
 package com.eat.diet.repo.model;
 
 public enum Pref {
-    NONE("Anything"),
+    NONE("No Preference"),
     VEGETARIAN("Vegetarian"),
     VEGAN("Vegan"),
     PALEO("Paleo"),

@@ -12,6 +12,7 @@ import java.util.List;
 public interface FoodRepository extends MongoRepository<Food, String> {
 
 
+    // no pref
     @Query("{type:'breakfast'}")
     List<Food> findAllBreakfast();
 
@@ -33,6 +34,7 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{calories: { $lt: ?0 } }")
     List<Food> findAllFoodsLessThanCalories(int calories);
 
+    // breakfasts
     @Query("{ type:'breakfast' , vegetarian: true, calories: {$lt: ?0 } }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsVegetarian(int calories);
 
@@ -45,6 +47,7 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{ type:'breakfast' , keto: true, calories: {$lt: ?0 } }")
     List<Food> findAllBreakfastLessThanCaloriesAndIsKeto(int calories);
 
+    // lunches
     @Query("{type:'lunch' , vegetarian: true, calories: {$lt: ?0 } }")
     List<Food> findAllLunchLessThanCaloriesAndIsVegetarian(int calories);
 
@@ -57,7 +60,7 @@ public interface FoodRepository extends MongoRepository<Food, String> {
     @Query("{type:'lunch' , keto: true, calories: {$lt: ?0 } }")
     List<Food> findAllLunchLessThanCaloriesAndIsKeto(int calories);
 
-
+    // dinners
     @Query("{type:'dinner' , vegetarian: true, calories: {$lt: ?0 } }")
     List<Food> findAllDinnerLessThanCaloriesAndIsVegetarian(int calories);
 

@@ -135,7 +135,12 @@ public class DietService {
                 }
             }
 
-            // Filter all foods to be combination less than calories given KETO pref.
+            // testing
+//            log.info("allMealsLessThanCalories size {}", allMealsLessThanCalories.size());
+//            log.info("no pref breakfast size {}", foodRepository.findAllFoodsLessThanCalories(100).size());
+
+
+            // Filter all foods to be combination less than calories
             for (Food f1 : allMealsLessThanCalories) {
                 //List returns all foods whose sum with f1.calories <= calories
                 List<Food> comboFoodsLessThanCalories = allMealsLessThanCalories
@@ -147,7 +152,6 @@ public class DietService {
                 comboFoodsLessThanCalories.stream().forEach(f -> {
                             foods.add(List.of(f, f1));
                         }
-
                 );
             }
 

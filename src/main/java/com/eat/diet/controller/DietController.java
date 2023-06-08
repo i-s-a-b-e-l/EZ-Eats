@@ -63,12 +63,12 @@ public class DietController {
         return "redirect:/mealPlan";
     }
 
-    @GetMapping("/about-us")
+    @GetMapping("/aboutUs")
     public String about() {
         return "aboutUs";
     }
 
-    @GetMapping("/how-it-works")
+    @GetMapping("/howItWorks")
     public String how() {
         return "howItWorks";
     }

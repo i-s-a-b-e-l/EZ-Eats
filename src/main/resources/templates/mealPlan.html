@@ -36,6 +36,7 @@
       Breakfast
     </button>
   </div>
+  <!--Where foods generate-->
   <div class="collapse" id="breakfast">
       <div class="card card-body container-flex mx-5 my-3" th:each="map : ${breakfast}">
         <p th:text="${map.key.getName()}"></p>
@@ -51,6 +52,7 @@
       Lunch
     </button>
   </div>
+  <!--Where foods generate-->
   <div class="collapse" id="lunch">
     <div class="card card-body container-flex mx-5 my-3" th:each="map : ${lunch}">
       <p th:text="${map.key.getName()}"></p>
@@ -66,6 +68,7 @@
       Dinner
     </button>
   </div>
+  <!--Where foods generate-->
   <div class="collapse" id="dinner">
     <div class="card card-body container-flex mx-5 my-3" th:each="map : ${dinner}">
       <p th:text="${map.key.getName()}"></p>

@@ -8,37 +8,75 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<!--navbar-->
-<nav class="navbar navbar-nav" style="background-color: #198753;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/ez-eats-high-resolution-logo-color-on-transparent-background.png" alt="EZ-Eats Logo" width="200" height="70.7" class="d-inline-block align-text-top"></a>
-        <div class="navbar" id="navbarSupportedContent">
-            <ul class="nav nav-underline me-auto mb-2 mb-lg-0 fs-5">
-                <li class="nav-item">
-                    <a class="nav-link" href="/howItWorks" style="color: white;">How It Works</a>
+    <!--navbar-->
+    <nav class="navbar navbar-nav" style="background-color: #198753;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/ez-eats-high-resolution-logo-color-on-transparent-background.png" alt="EZ-Eats Logo" width="200" height="70.7" class="d-inline-block align-text-top"></a>
+            <div class="navbar" id="navbarSupportedContent">
+                <ul class="nav nav-underline me-auto mb-2 mb-lg-0 fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/howItWorks" style="color: white;">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutUs" style="color: white;">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Title-->
+    <h2 class="text-center fs-2 mt-3" style="Font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+        How It Works
+    </h2>
+
+    <!--body-->
+    <!--Creating a container so I have margins-->
+    <div class="container-flex mx-5 px-5 my-4">
+        <!--Main text-->
+        <p class="fs-6">
+            <img src="/healthy-food.jpg" class="rounded float-end img-thumbnail col-2 px-2 py-2" alt="healthy food">
+            EZ Eats offers comprehensive meal plans to help you achieve your health and fitness goals.
+            Our carefully curated meal plans are designed to provide you with nutritious and delicious meals,
+            taking the guesswork out of meal preparation. With EZ Eats, you'll receive personalized meal recommendations
+            tailored to your dietary preferences and requirements. While we don't directly order food for you,
+            we make it effortless for you to discover new recipes, access detailed ingredient lists,
+            and follow step-by-step cooking instructions. Take control of your nutrition journey with EZ Eats and
+            experience the convenience of meal planning made easy.<br><br>
+            At EZ Eats, our meal planning process combines advanced algorithms with user input to deliver personalized meal plans. Here's how it works:
+            <ul>
+                <li>
+                    Profile Creation: When you sign up with EZ Eats, you'll create a profile where you provide details about your body, dietary preferences, and goals.
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/aboutUs" style="color: white;">About Us</a>
+                <li>
+                    Data Analysis: Our system analyzes the information you provide, taking into account factors such as your calorie needs, macronutrient ratios, and food preferences. We use advanced algorithms to generate customized meal plans based on these parameters.
+                </li>
+                <li>
+                    Meal Plan Generation: Using a vast database of recipes and nutritional information, our system generates a comprehensive meal plan for you. The plan includes breakfast, lunch, and dinner, ensuring a well-balanced and varied diet.
+                </li>
+                <li>
+                    Recipe Recommendations: EZ Eats provides you with a selection of recipes for each meal, carefully chosen to meet your dietary needs and preferences.
                 </li>
             </ul>
-        </div>
+        </p>
     </div>
-</nav>
 
-<!--Title-->
-<h2 class="text-center fs-2 mt-3" style = "Font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-    How It Works
-</h2>
-
-<!--body-->
-<!--Creating a container so I have margins-->
-<div class="container-flex mx-5 px-5 my-4">
-<!--Main text-->
-<p class="fs-6">
-    EZ Eats is a service that develops customized nutrition plans for each user to promote a healthy lifestyle. Utilizing the user's goal, diet lifestyle, and physical characteristics, EZ Eats calculates a daily calorie intake value for the user. Using this information, EZ Eats creates a highly supportive daily meal plan consisting of several nutritious foods to allow users to reach optimal well being.
-</p>
-</div>
+    <!--footer-->
+    <footer class="text-start text-lg-start text-dark" style="background-color: #ECEFF1">
+        <section class="d-flex col-12 justify-content-around p-2 text-white" style="background-color: #198753; font-size: .8rem;">
+            <img src="/ez-eats-high-resolution-logo-color-on-transparent-background.png" alt="EZ-Eats Logo" width="142.857142857" height="50.5" class="d-inline-block align-text-top">
+            <div class="col-3">
+                Designed and built with all the love in the world by the EZ Eats team with a shared vision to revolutionize the way we experience food and nourish our bodies.
+            </div>
+            <div class="col-3">
+                <span>EZ-Eats created by Mahima S, Isabel S, and Zoey Z<br>Not to be used for medical advice.</span>
+            </div>
+            <div class="col-3">
+                &copy;2023 EZ Eats, inc. All rights reserved.
+            </div>
+        </section>
+    </footer>
 </body>
 </html>

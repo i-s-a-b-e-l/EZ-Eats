@@ -1,7 +1,7 @@
 
 <h1 align="center">EZ Eats</h1>
 
-<p align="center">The EZ Eats service provides users with an efficient diet planner that helps reach optimal well being by supporting a healthy lifestyle.</p>
+The EZ Eats service provides users with an efficient diet planner that helps reach optimal well being by supporting a healthy lifestyle. To run the service, press the run button for the EzEatsApplication file _(src/main/java/com/eat/diet/EzEatsApplication.java)_. 
 
 ## Table of Contents
 
